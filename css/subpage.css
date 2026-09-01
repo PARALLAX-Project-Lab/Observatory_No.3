@@ -1047,3 +1047,10 @@ a {
 
 }
 
+/* 개발자 검사창 확인용 숨김 텍스트 */
+
+.inspect-hide {
+
+    display: none;
+
+}
