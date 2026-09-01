@@ -819,3 +819,238 @@ a {
     }
 
 }
+
+
+/* layout fix */
+
+.sub-top {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 72px;
+
+    padding: 0;
+
+}
+
+.sub-top-in {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: var(--max);
+
+    padding: 0 28px;
+
+}
+
+.sub-brand-symbol {
+
+    width: 24px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    background-color: var(--gold);
+
+    -webkit-mask-image: url("../img/PARALLAX_Symbol.png");
+    mask-image: url("../img/PARALLAX_Symbol.png");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+}
+
+.sub-nav {
+
+    top: 72px;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 0;
+
+}
+
+.sub-nav-in {
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    max-width: var(--max);
+
+    padding: 0 28px;
+
+    gap: 6px;
+
+    overflow-x: auto;
+
+}
+
+.staff-list {
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 18px;
+
+}
+
+.staff-row {
+
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+
+    gap: 16px;
+
+}
+
+.staff-summary {
+
+    display: flex;
+    flex-direction: column;
+
+    width: 31%;
+
+    flex: 0 0 auto;
+
+    padding: 18px;
+
+    gap: 12px;
+
+    border: 1px solid var(--line);
+    border-radius: 10px;
+
+    background-color: var(--card);
+
+}
+
+.staff-summary p {
+
+    color: var(--text-sub);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+.staff-summary strong {
+
+    color: var(--gold-light);
+
+}
+
+.staff-detail {
+
+    display: flex;
+    flex-direction: column;
+
+    width: calc(69% - 16px);
+
+    gap: 16px;
+
+}
+
+.staff-detail > .card {
+
+    width: 100%;
+
+}
+
+.staff-grid {
+
+    gap: 16px;
+
+}
+
+.staff-grid .card {
+
+    width: calc(50% - 8px);
+
+}
+
+.person-visual {
+
+    aspect-ratio: 4 / 5;
+
+}
+
+@media (max-width: 980px) {
+
+    .staff-row {
+
+        flex-direction: column;
+
+    }
+
+    .staff-summary,
+    .staff-detail {
+
+        width: 100%;
+
+    }
+
+    .staff-summary {
+
+        max-width: 420px;
+
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .sub-top {
+
+        height: 64px;
+
+    }
+
+    .sub-top-in {
+
+        padding: 0 18px;
+
+    }
+
+    .sub-nav {
+
+        top: 64px;
+
+    }
+
+    .sub-nav-in {
+
+        padding: 0 18px;
+
+    }
+
+    .staff-summary {
+
+        max-width: none;
+
+    }
+
+    .staff-grid .card {
+
+        width: 100%;
+
+    }
+
+}
+
