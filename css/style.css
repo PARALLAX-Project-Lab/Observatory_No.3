@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 :root {
-    
     --bg: #1E1E1E;
     --bg-sub: #242424;
     --card: #262626;
@@ -733,3 +732,114 @@ footer {
         line-height: 1.8;
     }
 }
+
+/* observatory selector */
+
+.observatory-list {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    gap: 16px;
+
+}
+
+.observatory-card {
+
+    display: flex;
+    flex-direction: column;
+
+    width: calc(33.333% - 11px);
+    min-height: 190px;
+
+    flex: 0 0 auto;
+
+    padding: 24px;
+
+    gap: 12px;
+
+    border: 1px solid var(--line);
+    border-radius: 12px;
+
+    background-color: var(--card);
+
+}
+
+.observatory-card h3 {
+
+    color: var(--text);
+
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.observatory-card > p:not(.observatory-num) {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+.observatory-num {
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+}
+
+.observatory-card.disabled {
+
+    opacity: 0.48;
+
+    cursor: default;
+
+}
+
+.observatory-card.active-card {
+
+    border-color: var(--gold-dark);
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+
+}
+
+.observatory-card.active-card:hover {
+
+    border-color: var(--gold);
+
+    background-color: #2B2924;
+
+}
+
+@media (max-width: 980px) {
+
+    .observatory-card {
+
+        width: calc(50% - 8px);
+
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .observatory-card {
+
+        width: 100%;
+
+    }
+
+}
+
