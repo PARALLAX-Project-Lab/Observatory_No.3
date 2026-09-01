@@ -820,7 +820,6 @@ a {
 
 }
 
-
 /* layout fix */
 
 .sub-top {
@@ -982,12 +981,6 @@ a {
 .staff-grid .card {
 
     width: calc(50% - 8px);
-
-}
-
-.person-visual {
-
-    aspect-ratio: 4 / 5;
 
 }
 
