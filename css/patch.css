@@ -453,9 +453,51 @@ textarea {
 }
 
 
-/* 시간계 아이콘 */
 
-.ability-list article > .time-ability-icon {
+
+@media (max-width: 700px) {
+
+    .ability-maker-result-wrap {
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+/* 능력 생성기 텍스트 영역 크기 고정 */
+
+.ability-maker-field {
+
+    min-height: 96px;
+    max-height: 96px;
+
+    overflow-y: auto;
+
+}
+
+.ability-maker-result-wrap {
+
+    min-height: 150px;
+    max-height: 150px;
+
+    overflow: hidden;
+
+}
+
+.ability-maker-result {
+
+    max-height: 118px;
+
+    overflow-y: auto;
+
+}
+
+
+/* 시간계보 아이콘 */
+
+.lineage-card .time-lineage-icon {
 
     background-color: var(--gold-light);
 
@@ -468,21 +510,10 @@ textarea {
     -webkit-mask-position: center;
     mask-position: center;
 
-    -webkit-mask-size: 58%;
-    mask-size: 58%;
+    -webkit-mask-size: contain;
+    mask-size: contain;
 
     color: transparent;
-
-}
-
-
-@media (max-width: 700px) {
-
-    .ability-maker-result-wrap {
-
-        align-items: flex-start;
-
-    }
 
 }
 

@@ -279,19 +279,21 @@ abilityCopyButton?.addEventListener("click", async () => {
 });
 
 
-/* 시간계 아이콘 */
 
-document.querySelectorAll(".ability-list article").forEach((card) => {
+
+/* 시간계보 아이콘 */
+
+document.querySelectorAll(".lineage-card").forEach((card) => {
 
     const title = card.querySelector("h3");
 
-    if (title?.textContent.trim() !== "시간계") {
+    if (title?.textContent.trim() !== "시간계보") {
 
         return;
 
     }
 
-    const icon = card.querySelector(":scope > span");
+    const icon = card.querySelector(".sigil");
 
     if (!icon) {
 
@@ -300,7 +302,7 @@ document.querySelectorAll(".ability-list article").forEach((card) => {
     }
 
     icon.textContent = "";
-    icon.classList.add("time-ability-icon");
+    icon.classList.add("time-lineage-icon");
 
 });
 
