@@ -191,7 +191,7 @@ textarea {
 
     color: var(--text-sub);
 
-    font-size: 13px;
+    font-size: 16px;
 
 }
 
@@ -199,7 +199,7 @@ textarea {
 
     color: var(--muted-dark);
 
-    font-size: 12px;
+    font-size: 14px;
 
 }
 
@@ -235,7 +235,7 @@ textarea {
 
     color: var(--muted);
 
-    font-size: 13px;
+    font-size: 14px;
 
 }
 
@@ -531,8 +531,8 @@ textarea {
 
     background-color: var(--gold-light);
 
-    -webkit-mask-image: url("../icon/chaos_spiral_sharp.svg");
-    mask-image: url("../icon/chaos_spiral_sharp.svg");
+    -webkit-mask-image: url("../icon/chaos-lineage.svg");
+    mask-image: url("../icon/chaos-lineage.svg");
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -547,3 +547,62 @@ textarea {
 
 }
 
+
+/* 운명계보 아이콘 */
+
+.lineage-card .fate-lineage-icon {
+
+    display: block;
+
+    width: 29px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    background-color: var(--gold-light);
+
+    -webkit-mask-image: url("../icon/quill-pen.svg");
+    mask-image: url("../icon/quill-pen.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    color: transparent;
+
+}
+
+
+/* 천상계보 아이콘 */
+
+.lineage-card .heaven-lineage-icon {
+
+    display: block;
+
+    width: 29px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    background-color: var(--gold-light);
+
+    -webkit-mask-image: url("../icon/wings.svg");
+    mask-image: url("../icon/wings.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    color: transparent;
+
+}

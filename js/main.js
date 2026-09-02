@@ -333,6 +333,58 @@ document.querySelectorAll(".lineage-card").forEach((card) => {
 });
 
 
+/* 운명계보 아이콘 */
+
+document.querySelectorAll(".lineage-card").forEach((card) => {
+
+    const title = card.querySelector("h3");
+
+    if (title?.textContent.trim() !== "운명계보") {
+
+        return;
+
+    }
+
+    const icon = card.querySelector(".sigil");
+
+    if (!icon) {
+
+        return;
+
+    }
+
+    icon.textContent = "";
+    icon.classList.add("fate-lineage-icon");
+
+});
+
+
+/* 천상계보 아이콘 */
+
+document.querySelectorAll(".lineage-card").forEach((card) => {
+
+    const title = card.querySelector("h3");
+
+    if (title?.textContent.trim() !== "천상계보") {
+
+        return;
+
+    }
+
+    const icon = card.querySelector(".sigil");
+
+    if (!icon) {
+
+        return;
+
+    }
+
+    icon.textContent = "";
+    icon.classList.add("heaven-lineage-icon");
+
+});
+
+
 const sections = [...document.querySelectorAll("main section[id]")];
 
 const observer = new IntersectionObserver(
