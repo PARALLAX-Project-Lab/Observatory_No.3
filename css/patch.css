@@ -325,3 +325,20 @@ textarea {
     }
 
 }
+
+.ability-maker-result {
+
+    flex: 1 1 auto;
+
+    line-height: 1.75;
+
+}
+
+.ability-maker-result strong {
+
+    color: var(--gold-light);
+
+    font-weight: 700;
+
+}
+
