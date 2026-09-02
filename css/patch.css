@@ -517,3 +517,33 @@ textarea {
 
 }
 
+
+/* 혼돈계보 아이콘 */
+
+.lineage-card .chaos-lineage-icon {
+
+    display: block;
+
+    width: 29px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    background-color: var(--gold-light);
+
+    -webkit-mask-image: url("../icon/chaos_spiral_sharp.svg");
+    mask-image: url("../icon/chaos_spiral_sharp.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    color: transparent;
+
+}
+

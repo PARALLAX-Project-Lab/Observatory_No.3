@@ -44,7 +44,7 @@ button {
 }
 
 .icon {
-    width: 3%;
+    width: 24px;
     aspect-ratio: 1 / 1;
     flex: 0 0 auto;
     padding: 0;

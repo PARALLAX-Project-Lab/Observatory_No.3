@@ -307,6 +307,32 @@ document.querySelectorAll(".lineage-card").forEach((card) => {
 });
 
 
+/* 혼돈계보 아이콘 */
+
+document.querySelectorAll(".lineage-card").forEach((card) => {
+
+    const title = card.querySelector("h3");
+
+    if (title?.textContent.trim() !== "혼돈계보") {
+
+        return;
+
+    }
+
+    const icon = card.querySelector(".sigil");
+
+    if (!icon) {
+
+        return;
+
+    }
+
+    icon.textContent = "";
+    icon.classList.add("chaos-lineage-icon");
+
+});
+
+
 const sections = [...document.querySelectorAll("main section[id]")];
 
 const observer = new IntersectionObserver(
