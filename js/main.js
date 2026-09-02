@@ -170,6 +170,32 @@ const abilityCopyButton = document.querySelector(".ability-copy-btn");
 
 let currentAbilityText = "";
 
+/* 능력 결과 페이드 */
+
+const abilityResultWrap = document.querySelector(".ability-maker-result-wrap");
+
+const syncAbilityResultFade = () => {
+
+    if (!abilityResult || !abilityResultWrap) {
+
+        return;
+
+    }
+
+    const hasOverflow = abilityResult.scrollHeight > abilityResult.clientHeight + 1;
+    const atBottom = abilityResult.scrollTop + abilityResult.clientHeight >= abilityResult.scrollHeight - 2;
+
+    abilityResultWrap.classList.toggle("has-overflow", hasOverflow);
+    abilityResultWrap.classList.toggle("at-bottom", !hasOverflow || atBottom);
+
+};
+
+abilityResult?.addEventListener("scroll", syncAbilityResultFade);
+
+window.addEventListener("resize", syncAbilityResultFade);
+
+
+
 abilityButton?.addEventListener("click", () => {
 
     if (!randomAbilities.length) {
@@ -213,6 +239,10 @@ abilityButton?.addEventListener("click", () => {
             ${ability.detail}<br><br>
             <strong>대가</strong> ${ability.backlash}
         `;
+
+        abilityResult.scrollTop = 0;
+
+        window.requestAnimationFrame(syncAbilityResultFade);
 
     }
 

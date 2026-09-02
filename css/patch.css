@@ -714,3 +714,51 @@ textarea {
 
 }
 
+
+/* 능력 결과 스크롤바 숨김 + 하단 페이드 */
+
+.ability-maker-result {
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+}
+
+.ability-maker-result::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+.ability-maker-result-wrap::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 54px;
+    bottom: 0;
+
+    height: 32px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(36, 36, 36, 0),
+        var(--bg-sub)
+    );
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition: opacity 0.18s ease;
+
+}
+
+.ability-maker-result-wrap.has-overflow:not(.at-bottom)::after {
+
+    opacity: 1;
+
+}
+
