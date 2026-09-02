@@ -342,3 +342,42 @@ textarea {
 
 }
 
+
+/* 서브메뉴 가로 드래그 */
+
+.sub-nav-in {
+
+    overflow-x: auto;
+
+    cursor: grab;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+
+    touch-action: pan-x;
+
+    user-select: none;
+
+}
+
+.sub-nav-in::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+.sub-nav-in.dragging {
+
+    cursor: grabbing;
+
+}
+
+.sub-nav-in a {
+
+    flex: 0 0 auto;
+
+    user-select: none;
+
+}
+
