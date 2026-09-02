@@ -34,6 +34,51 @@ if (subTop && subTopIn && subBrand) {
 }
 
 
+/* 제3관측동 인물 이미지 */
+
+const profileImages = {
+    "COPYCAT IMAGE": {
+        src: "../../img/copycat_profile.png",
+        alt: "CopyCat"
+    },
+    "INK IMAGE": {
+        src: "../../img/ink_profile.png",
+        alt: "INK"
+    },
+    "LOOP IMAGE": {
+        src: "../../img/loop_profile.png",
+        alt: "Loop"
+    },
+    "ANGEL IMAGE": {
+        src: "../../img/angel_profile.png",
+        alt: "Angel"
+    }
+};
+
+document.querySelectorAll(".person-placeholder").forEach((placeholder) => {
+
+    const profile = profileImages[placeholder.textContent.trim()];
+
+    if (!profile) {
+
+        return;
+
+    }
+
+    const visual = placeholder.closest(".person-visual");
+    const image = document.createElement("img");
+
+    image.className = "person-img contain";
+    image.src = profile.src;
+    image.alt = profile.alt;
+
+    visual?.classList.add("profile-white");
+
+    placeholder.replaceWith(image);
+
+});
+
+
 const subNavIn = document.querySelector(".sub-nav-in");
 const links = document.querySelectorAll(".sub-nav a");
 const sections = document.querySelectorAll("main section[data-nav]");

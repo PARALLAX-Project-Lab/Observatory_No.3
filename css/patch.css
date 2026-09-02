@@ -762,3 +762,19 @@ textarea {
 
 }
 
+
+/* 제3관측동 투명 프로필 이미지 */
+
+.person-visual.profile-white {
+
+    background-color: #FFFFFF;
+
+}
+
+.person-visual.profile-white .person-img {
+
+    object-fit: contain;
+    object-position: center bottom;
+
+}
+
