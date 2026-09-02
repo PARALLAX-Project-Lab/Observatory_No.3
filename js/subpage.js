@@ -39,19 +39,23 @@ if (subTop && subTopIn && subBrand) {
 const profileImages = {
     "COPYCAT IMAGE": {
         src: "../../img/copycat_profile.png",
-        alt: "CopyCat"
+        alt: "CopyCat",
+        className: "profile-copycat"
     },
     "INK IMAGE": {
         src: "../../img/ink_profile.png",
-        alt: "INK"
+        alt: "INK",
+        className: "profile-ink"
     },
     "LOOP IMAGE": {
         src: "../../img/loop_profile.png",
-        alt: "Loop"
+        alt: "Loop",
+        className: "profile-loop"
     },
     "ANGEL IMAGE": {
         src: "../../img/angel_profile.png",
-        alt: "Angel"
+        alt: "Angel",
+        className: "profile-angel"
     }
 };
 
@@ -68,13 +72,27 @@ document.querySelectorAll(".person-placeholder").forEach((placeholder) => {
     const visual = placeholder.closest(".person-visual");
     const image = document.createElement("img");
 
-    image.className = "person-img contain";
+    image.className = `person-img contain ${profile.className}`;
     image.src = profile.src;
     image.alt = profile.alt;
 
     visual?.classList.add("profile-white");
 
     placeholder.replaceWith(image);
+
+});
+
+
+/* 미제작 인물 이미지 */
+
+document.querySelectorAll(
+    'section[data-nav="security-member"] .person-placeholder, section[data-nav="gilo"] .person-placeholder'
+).forEach((placeholder) => {
+
+    const visual = placeholder.closest(".person-visual");
+
+    placeholder.textContent = "이미지 추가 예정";
+    visual?.classList.add("image-pending");
 
 });
 

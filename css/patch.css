@@ -778,3 +778,44 @@ textarea {
 
 }
 
+
+/* 프로필 인물 높이 통일 */
+
+.person-visual.profile-white .person-img {
+
+    width: auto;
+    height: 100%;
+    max-width: none;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+}
+
+.person-visual.profile-white .profile-ink {
+
+    height: 94%;
+
+}
+
+
+/* 미제작 인물 이미지 */
+
+.person-visual.image-pending {
+
+    min-height: 72px;
+    aspect-ratio: auto;
+
+    background-color: var(--card-sub);
+
+}
+
+.person-visual.image-pending .person-placeholder {
+
+    color: var(--muted);
+
+    font-size: 12px;
+    letter-spacing: 0.05em;
+
+}
+
