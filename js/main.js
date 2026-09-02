@@ -122,9 +122,21 @@ if (page && !document.querySelector("#ability-maker")) {
 
             <div class="ability-maker-action">
 
-                <p class="ability-maker-result">
-                    버튼을 누르면 능력 상세가 표시됩니다.
-                </p>
+                <div class="ability-maker-result-wrap">
+
+                    <p class="ability-maker-result">
+                        버튼을 누르면 능력 상세가 표시됩니다.
+                    </p>
+
+                    <button
+                        class="ability-copy-btn"
+                        type="button"
+                        aria-label="생성된 능력 복사"
+                        title="복사"
+                        disabled
+                    ></button>
+
+                </div>
 
                 <button class="ability-maker-btn" type="button">
                     딸깍
@@ -154,6 +166,9 @@ const abilityType = document.querySelector('[data-ability="type"]');
 const abilityName = document.querySelector('[data-ability="name"]');
 const abilityCost = document.querySelector('[data-ability="cost"]');
 const abilityLimit = document.querySelector('[data-ability="limit"]');
+const abilityCopyButton = document.querySelector(".ability-copy-btn");
+
+let currentAbilityText = "";
 
 abilityButton?.addEventListener("click", () => {
 
@@ -200,6 +215,92 @@ abilityButton?.addEventListener("click", () => {
         `;
 
     }
+
+    currentAbilityText = [
+        `[${ability.name}]`,
+        `분류: ${ability.type}`,
+        `능력: ${ability.detail}`,
+        `제약: ${ability.limit}`,
+        `대가: ${ability.cost}`,
+        `상세: ${ability.backlash}`
+    ].join("\n");
+
+    if (abilityCopyButton) {
+
+        abilityCopyButton.disabled = false;
+
+    }
+
+});
+
+
+abilityCopyButton?.addEventListener("click", async () => {
+
+    if (!currentAbilityText) {
+
+        return;
+
+    }
+
+    try {
+
+        await navigator.clipboard.writeText(currentAbilityText);
+
+    } catch {
+
+        const copyArea = document.createElement("textarea");
+
+        copyArea.value = currentAbilityText;
+        copyArea.setAttribute("readonly", "");
+        copyArea.style.position = "fixed";
+        copyArea.style.opacity = "0";
+
+        document.body.appendChild(copyArea);
+
+        copyArea.select();
+        document.execCommand("copy");
+
+        copyArea.remove();
+
+    }
+
+    abilityCopyButton.classList.add("copied");
+    abilityCopyButton.setAttribute("aria-label", "복사 완료");
+    abilityCopyButton.title = "복사 완료";
+
+    window.setTimeout(() => {
+
+        abilityCopyButton.classList.remove("copied");
+        abilityCopyButton.setAttribute("aria-label", "생성된 능력 복사");
+        abilityCopyButton.title = "복사";
+
+    }, 1200);
+
+});
+
+
+/* 시간계 아이콘 */
+
+document.querySelectorAll(".ability-list article").forEach((card) => {
+
+    const title = card.querySelector("h3");
+
+    if (title?.textContent.trim() !== "시간계") {
+
+        return;
+
+    }
+
+    const icon = card.querySelector(":scope > span");
+
+    if (!icon) {
+
+        return;
+
+    }
+
+    icon.textContent = "";
+    icon.classList.add("time-ability-icon");
 
 });
 
