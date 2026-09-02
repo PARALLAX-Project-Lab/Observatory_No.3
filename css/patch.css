@@ -606,3 +606,111 @@ textarea {
     color: transparent;
 
 }
+
+
+/* 능력 생성기 배치 수정 */
+
+.ability-maker-result-wrap {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 18px 54px 18px 18px;
+
+    border: 1px solid var(--line);
+    border-radius: 9px;
+
+    background-color: var(--bg-sub);
+
+}
+
+.ability-copy-btn {
+
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+}
+
+.ability-maker-action {
+
+    justify-content: flex-end;
+
+}
+
+
+/* 죽음계보 아이콘 */
+
+.lineage-card .death-lineage-icon {
+
+    display: block;
+
+    width: 29px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    background-color: var(--gold-light);
+
+    -webkit-mask-image: url("../icon/inscription.svg");
+    mask-image: url("../icon/inscription.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    color: transparent;
+
+}
+
+
+/* 천체계보 아이콘 */
+
+.lineage-card .celestial-lineage-icon {
+
+    display: block;
+
+    width: 29px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    background-color: var(--gold-light);
+
+    -webkit-mask-image: url("../icon/galaxy.svg");
+    mask-image: url("../icon/galaxy.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    color: transparent;
+
+}
+
+
+/* 타 창조신 계보 아이콘 */
+
+.lineage-card .other-creator-lineage-icon {
+
+    color: var(--gold-light);
+
+    font-size: 29px;
+    font-weight: 700;
+
+    line-height: 1;
+
+}
+

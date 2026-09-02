@@ -84,6 +84,22 @@ if (page && !document.querySelector("#ability-maker")) {
 
             </div>
 
+            <div class="ability-maker-result-wrap">
+
+                <p class="ability-maker-result">
+                    버튼을 누르면 능력 상세가 표시됩니다.
+                </p>
+
+                <button
+                    class="ability-copy-btn"
+                    type="button"
+                    aria-label="생성된 능력 복사"
+                    title="복사"
+                    disabled
+                ></button>
+
+            </div>
+
             <div class="ability-maker-fields">
 
                 <div class="ability-maker-field">
@@ -121,22 +137,6 @@ if (page && !document.querySelector("#ability-maker")) {
             </div>
 
             <div class="ability-maker-action">
-
-                <div class="ability-maker-result-wrap">
-
-                    <p class="ability-maker-result">
-                        버튼을 누르면 능력 상세가 표시됩니다.
-                    </p>
-
-                    <button
-                        class="ability-copy-btn"
-                        type="button"
-                        aria-label="생성된 능력 복사"
-                        title="복사"
-                        disabled
-                    ></button>
-
-                </div>
 
                 <button class="ability-maker-btn" type="button">
                     딸깍
@@ -383,6 +383,60 @@ document.querySelectorAll(".lineage-card").forEach((card) => {
     icon.classList.add("heaven-lineage-icon");
 
 });
+
+
+/* 죽음계보 · 천체계보 아이콘 */
+
+document.querySelectorAll(".lineage-card").forEach((card) => {
+
+    const title = card.querySelector("h3");
+    const icon = card.querySelector(".sigil");
+
+    if (!title || !icon) {
+
+        return;
+
+    }
+
+    const name = title.textContent.trim();
+
+    if (name === "죽음계보") {
+
+        icon.textContent = "";
+        icon.classList.add("death-lineage-icon");
+
+    }
+
+    if (name === "천체계보") {
+
+        icon.textContent = "";
+        icon.classList.add("celestial-lineage-icon");
+
+    }
+
+});
+
+
+/* 타 창조신 계보 */
+
+const lineageGrid = document.querySelector(".lineage-grid");
+
+if (lineageGrid && !document.querySelector(".other-creator-lineage")) {
+
+    const otherCreator = document.createElement("article");
+
+    otherCreator.className = "lineage-card other-creator-lineage";
+
+    otherCreator.innerHTML = `
+        <span class="sigil other-creator-lineage-icon">?</span>
+        <h3>타 창조신 계보</h3>
+        <p>로고스 계보에 속하지 않은 다른 신격들이 포함됩니다.</p>
+        <small>다른 창조신에게서 파생된 존재들을 분류합니다.</small>
+    `;
+
+    lineageGrid.appendChild(otherCreator);
+
+}
 
 
 const sections = [...document.querySelectorAll("main section[id]")];
