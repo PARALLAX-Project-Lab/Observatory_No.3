@@ -628,122 +628,79 @@
 
 /* tablet */
 
-@media (max-width: 980px) {
 
-    .sub-hero {
+/* JS 없이 처리하는 제3관측동 고정 콘텐츠 */
 
-        flex-direction: column;
-        align-items: flex-start;
+/* 기존 '메인으로' 링크를 로고 위 투명 링크 영역으로 사용 */
+.sub-top-in {
+    position: relative;
+}
 
-    }
+.back-link {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 28px;
+    width: 150px;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    opacity: 0;
+    font-size: 0;
+}
 
-    .hero-copy {
+/* 고정 프로필은 JS 생성 대신 CSS 배경이미지로 표시 */
+section[data-nav="copycat"] .person-placeholder,
+section[data-nav="observer"] .person-placeholder {
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    font-size: 0;
+}
 
-        width: 100%;
+section[data-nav="copycat"] .person-placeholder {
+    background-image: url("../img/copycat_profile.png");
+}
 
-    }
+section[data-nav="observer"] .person-card:nth-child(1) .person-placeholder {
+    background-image: url("../img/ink_profile.png");
+    background-size: auto 94%;
+}
 
-    .hero-symbol {
+section[data-nav="observer"] .person-card:nth-child(2) .person-placeholder {
+    background-image: url("../img/loop_profile.png");
+}
 
-        align-self: center;
+section[data-nav="observer"] .person-card:nth-child(3) .person-placeholder {
+    background-image: url("../img/angel_profile.png");
+}
 
-    }
+/* 아직 이미지를 만들지 않은 보안팀 / Gilo */
+section[data-nav="security-member"] .person-visual,
+section[data-nav="gilo"] .person-visual {
+    min-height: 72px;
+    aspect-ratio: auto;
+}
 
-    .person-card {
+section[data-nav="security-member"] .person-placeholder,
+section[data-nav="gilo"] .person-placeholder {
+    color: transparent;
+    font-size: 0;
+}
 
-        width: calc(50% - 8px);
-
-    }
-
-    .profile-chip {
-
-        width: calc(50% - 6px);
-
-    }
-
+section[data-nav="security-member"] .person-placeholder::before,
+section[data-nav="gilo"] .person-placeholder::before {
+    content: "이미지 추가 예정";
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.05em;
 }
 
 
 /* mobile */
 
-@media (max-width: 700px) {
-
-    .sub-top {
-
-        padding: 15px 18px;
-
-    }
-
-    .sub-nav {
-
-        top: 63px;
-
-        padding: 0 18px;
-
-    }
-
-    .sub-wrap {
-
-        padding: 44px 18px 64px;
-
-        gap: 56px;
-
-    }
-
-    .sub-hero {
-
-        gap: 36px;
-
-    }
-
-    .sub-hero h1 {
-
-        font-size: 38px;
-
-    }
-
-    .hero-symbol {
-
-        width: 190px;
-
-    }
-
-    .card,
-    .card.third,
-    .person-card,
-    .profile-chip {
-
-        width: 100%;
-
-    }
-
-    .section-head h2 {
-
-        font-size: 28px;
-
-    }
-
-    .floor-list strong {
-
-        width: 72px;
-
-    }
-
-    .floor-list p {
-
-        padding: 0 14px;
-
-        font-size: 13px;
-
-    }
-
-    .sub-footer {
-
-        flex-direction: column;
-
-    }
-
-}
 
 /* layout fix */
 
@@ -909,68 +866,6 @@
 
 }
 
-@media (max-width: 980px) {
-
-    .staff-row {
-
-        flex-direction: column;
-
-    }
-
-    .staff-summary,
-    .staff-detail {
-
-        width: 100%;
-
-    }
-
-    .staff-summary {
-
-        max-width: 420px;
-
-    }
-
-}
-
-@media (max-width: 700px) {
-
-    .sub-top {
-
-        height: 64px;
-
-    }
-
-    .sub-top-in {
-
-        padding: 0 18px;
-
-    }
-
-    .sub-nav {
-
-        top: 64px;
-
-    }
-
-    .sub-nav-in {
-
-        padding: 0 18px;
-
-    }
-
-    .staff-summary {
-
-        max-width: none;
-
-    }
-
-    .staff-grid .card {
-
-        width: 100%;
-
-    }
-
-}
 
 /* 개발자 검사창 확인용 숨김 텍스트 */
 
@@ -1103,57 +998,193 @@
 
 }
 
-.sub-nav-in 
-/* 제3관측동 투명 프로필 이미지 */
+.sub-nav-in a {
+    flex: 0 0 auto;
+    user-select: none;
+}
 
-.person-visual.profile-white {
 
-    background-color: #FFFFFF;
+@media (max-width: 980px) {
+
+    .sub-hero {
+
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .hero-copy {
+
+        width: 100%;
+
+    }
+
+    .hero-symbol {
+
+        align-self: center;
+
+    }
+
+    .person-card {
+
+        width: calc(50% - 8px);
+
+    }
+
+    .profile-chip {
+
+        width: calc(50% - 6px);
+
+    }
 
 }
 
-.person-visual.profile-white .person-img {
 
-    object-fit: contain;
-    object-position: center bottom;
+@media (max-width: 980px) {
 
-}
+    .staff-row {
 
-/* 프로필 인물 높이 통일 */
+        flex-direction: column;
 
-.person-visual.profile-white .person-img {
+    }
 
-    width: auto;
-    height: 100%;
-    max-width: none;
+    .staff-summary,
+    .staff-detail {
 
-    object-fit: contain;
-    object-position: center bottom;
+        width: 100%;
 
-}
+    }
 
-.person-visual.profile-white .profile-ink {
+    .staff-summary {
 
-    height: 94%;
+        max-width: 420px;
+
+    }
 
 }
 
-/* 미제작 인물 이미지 */
 
-.person-visual.image-pending {
+@media (max-width: 700px) {
 
-    min-height: 72px;
-    aspect-ratio: auto;
+    .back-link {
+        left: 18px;
+    }
 
-    background-color: var(--card-sub);
+
+    .sub-top {
+
+        padding: 15px 18px;
+
+    }
+
+    .sub-nav {
+
+        top: 63px;
+
+        padding: 0 18px;
+
+    }
+
+    .sub-wrap {
+
+        padding: 44px 18px 64px;
+
+        gap: 56px;
+
+    }
+
+    .sub-hero {
+
+        gap: 36px;
+
+    }
+
+    .sub-hero h1 {
+
+        font-size: 38px;
+
+    }
+
+    .hero-symbol {
+
+        width: 190px;
+
+    }
+
+    .card,
+    .card.third,
+    .person-card,
+    .profile-chip {
+
+        width: 100%;
+
+    }
+
+    .section-head h2 {
+
+        font-size: 28px;
+
+    }
+
+    .floor-list strong {
+
+        width: 72px;
+
+    }
+
+    .floor-list p {
+
+        padding: 0 14px;
+
+        font-size: 13px;
+
+    }
+
+    .sub-footer {
+
+        flex-direction: column;
+
+    }
 
 }
 
-.person-visual.image-pending .person-placeholder {
 
-    color: var(--muted);
+@media (max-width: 700px) {
 
-    font-size: 12px;
-    letter-spacing: 0.05em;
+    .sub-top {
+
+        height: 64px;
+
+    }
+
+    .sub-top-in {
+
+        padding: 0 18px;
+
+    }
+
+    .sub-nav {
+
+        top: 64px;
+
+    }
+
+    .sub-nav-in {
+
+        padding: 0 18px;
+
+    }
+
+    .staff-summary {
+
+        max-width: none;
+
+    }
+
+    .staff-grid .card {
+
+        width: 100%;
+
+    }
 
 }

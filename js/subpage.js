@@ -1,93 +1,15 @@
+/* =========================================================
+   제3관측동 페이지 JS
+   ---------------------------------------------------------
+   JS가 꼭 필요한 사용자 동작만 남겨둔 파일입니다.
+
+   CSS로 이동한 고정 처리:
+   - PARALLAX 로고 영역을 메인 링크로 사용
+   - CopyCat / INK / Loop / Angel 이미지 표시
+   - 보안팀 / Gilo의 '이미지 추가 예정' 표시
+   ========================================================= */
+
 const subTop = document.querySelector(".sub-top");
-const subTopIn = document.querySelector(".sub-top-in");
-const subBrand = document.querySelector(".sub-brand");
-const backLink = document.querySelector(".back-link");
-
-if (subTop && subTopIn && subBrand) {
-
-    const homeLink = document.createElement("a");
-
-    homeLink.className = "sub-brand home-link";
-    homeLink.href = "../../index.html";
-    homeLink.setAttribute(
-        "aria-label",
-        "PARALLAX 메인 페이지로 이동"
-    );
-
-    while (subBrand.firstChild) {
-
-        homeLink.appendChild(subBrand.firstChild);
-
-    }
-
-    subBrand.replaceWith(homeLink);
-    backLink?.remove();
-
-}
-
-
-/* 제3관측동 인물 이미지 */
-
-const profileImages = {
-    "COPYCAT IMAGE": {
-        src: "../../img/copycat_profile.png",
-        alt: "CopyCat",
-        className: "profile-copycat"
-    },
-    "INK IMAGE": {
-        src: "../../img/ink_profile.png",
-        alt: "INK",
-        className: "profile-ink"
-    },
-    "LOOP IMAGE": {
-        src: "../../img/loop_profile.png",
-        alt: "Loop",
-        className: "profile-loop"
-    },
-    "ANGEL IMAGE": {
-        src: "../../img/angel_profile.png",
-        alt: "Angel",
-        className: "profile-angel"
-    }
-};
-
-document.querySelectorAll(".person-placeholder").forEach((placeholder) => {
-
-    const profile = profileImages[placeholder.textContent.trim()];
-
-    if (!profile) {
-
-        return;
-
-    }
-
-    const visual = placeholder.closest(".person-visual");
-    const image = document.createElement("img");
-
-    image.className = `person-img contain ${profile.className}`;
-    image.src = profile.src;
-    image.alt = profile.alt;
-
-    visual?.classList.add("profile-white");
-
-    placeholder.replaceWith(image);
-
-});
-
-
-/* 미제작 인물 이미지 */
-
-document.querySelectorAll(
-    'section[data-nav="security-member"] .person-placeholder, section[data-nav="gilo"] .person-placeholder'
-).forEach((placeholder) => {
-
-    const visual = placeholder.closest(".person-visual");
-
-    placeholder.textContent = "이미지 추가 예정";
-    visual?.classList.add("image-pending");
-
-});
-
 
 const subNavIn = document.querySelector(".sub-nav-in");
 const links = document.querySelectorAll(".sub-nav a");
@@ -96,7 +18,13 @@ const sections = document.querySelectorAll("main section[data-nav]");
 let didDrag = false;
 
 
-/* 서브메뉴 마우스 드래그 */
+/* =========================================================
+   1. 서브메뉴 마우스 드래그
+   ---------------------------------------------------------
+   PC에서 메뉴를 잡고 좌우로 끌 수 있게 합니다.
+   4px 이상 움직이면 드래그로 판단해서
+   드래그 직후 링크가 실수로 눌리는 것을 막습니다.
+   ========================================================= */
 
 if (subNavIn) {
 
@@ -169,7 +97,12 @@ if (subNavIn) {
 }
 
 
-/* 서브메뉴 클릭 시 별도 페이지 이동 없이 같은 페이지 해당 섹션으로 이동 */
+/* =========================================================
+   2. 같은 페이지의 해당 섹션으로 이동
+   ---------------------------------------------------------
+   링크의 #값과 같은 data-nav를 가진 section을 찾아
+   sticky 헤더/메뉴 높이를 빼고 부드럽게 이동합니다.
+   ========================================================= */
 
 links.forEach((link) => {
 
@@ -218,6 +151,13 @@ links.forEach((link) => {
 
 });
 
+
+/* =========================================================
+   3. 현재 보고 있는 서브 섹션 표시
+   ---------------------------------------------------------
+   화면 중앙에 들어온 섹션을 감지해서
+   해당 서브메뉴 링크에 active 클래스를 붙입니다.
+   ========================================================= */
 
 const observer = new IntersectionObserver(
     (entries) => {

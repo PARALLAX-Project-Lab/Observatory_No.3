@@ -1,3 +1,17 @@
+/* =========================================================
+   1. 랜덤 능력 데이터
+   ---------------------------------------------------------
+   능력 뽑기 버튼을 눌렀을 때 여기 등록된 능력 중 하나를
+   무작위로 선택합니다.
+
+   type     = 능력계열
+   name     = 능력명
+   cost     = 대가
+   limit    = 제약
+   detail   = 능력 설명
+   backlash = 상세 설명 / 부작용
+   ========================================================= */
+
 const randomAbilities = [
 
     {
@@ -110,6 +124,14 @@ const randomAbilities = [
 ];
 
 
+/* =========================================================
+   2. 모바일 메뉴 열기 / 닫기
+   ---------------------------------------------------------
+   .menu-btn을 누르면 .side-nav에 open 클래스를 붙였다 떼어서
+   모바일 메뉴를 화면 안팎으로 움직입니다.
+   메뉴 항목을 누르면 메뉴를 다시 닫습니다.
+   ========================================================= */
+
 const menuButton = document.querySelector(".menu-btn");
 const sideNav = document.querySelector(".side-nav");
 const navLinks = [...document.querySelectorAll(".side-nav a")];
@@ -131,6 +153,14 @@ navLinks.forEach((link) => {
 });
 
 
+/* =========================================================
+   3. 능력 배포기에서 사용할 HTML 요소 찾기
+   ---------------------------------------------------------
+   버튼, 결과창, 능력계열/능력명/대가/제약 칸을 찾습니다.
+   HTML 구조와 아이콘은 이미 HTML/CSS에 있고,
+   JS는 뽑힌 텍스트만 교체합니다.
+   ========================================================= */
+
 const abilityButton = document.querySelector(".ability-maker-btn");
 const abilityResult = document.querySelector(".ability-maker-result");
 const abilityType = document.querySelector('[data-ability="type"]');
@@ -141,7 +171,13 @@ const abilityCopyButton = document.querySelector(".ability-copy-btn");
 
 let currentAbilityText = "";
 
-/* 능력 결과 페이드 */
+/* =========================================================
+   4. 긴 능력 설명의 하단 페이드 표시
+   ---------------------------------------------------------
+   결과가 결과창보다 길면 has-overflow 클래스를 붙이고,
+   끝까지 읽으면 at-bottom 클래스를 붙입니다.
+   페이드 모양 자체는 CSS가 담당합니다.
+   ========================================================= */
 
 const abilityResultWrap = document.querySelector(".ability-maker-result-wrap");
 
@@ -165,6 +201,13 @@ abilityResult?.addEventListener("scroll", syncAbilityResultFade);
 
 window.addEventListener("resize", syncAbilityResultFade);
 
+
+/* =========================================================
+   5. 능력 뽑기
+   ---------------------------------------------------------
+   randomAbilities 중 하나를 무작위 선택한 뒤
+   HTML에 있는 네 칸과 상세 결과창에 내용을 넣습니다.
+   ========================================================= */
 
 abilityButton?.addEventListener("click", () => {
 
@@ -234,6 +277,16 @@ abilityButton?.addEventListener("click", () => {
 });
 
 
+/* =========================================================
+   6. 생성된 능력 복사
+   ---------------------------------------------------------
+   Clipboard API로 복사합니다.
+   지원하지 않는 브라우저에서는 임시 textarea를 사용합니다.
+
+   copied 클래스는 '복사 완료' 상태를 알려주기 위한 것이고,
+   실제 복사 아이콘 이미지는 CSS가 바꿉니다.
+   ========================================================= */
+
 abilityCopyButton?.addEventListener("click", async () => {
 
     if (!currentAbilityText) {
@@ -278,163 +331,12 @@ abilityCopyButton?.addEventListener("click", async () => {
 });
 
 
-/* 시간계보 아이콘 */
-
-document.querySelectorAll(".lineage-card").forEach((card) => {
-
-    const title = card.querySelector("h3");
-
-    if (title?.textContent.trim() !== "시간계보") {
-
-        return;
-
-    }
-
-    const icon = card.querySelector(".sigil");
-
-    if (!icon) {
-
-        return;
-
-    }
-
-    icon.textContent = "";
-    icon.classList.add("time-lineage-icon");
-
-});
-
-
-/* 혼돈계보 아이콘 */
-
-document.querySelectorAll(".lineage-card").forEach((card) => {
-
-    const title = card.querySelector("h3");
-
-    if (title?.textContent.trim() !== "혼돈계보") {
-
-        return;
-
-    }
-
-    const icon = card.querySelector(".sigil");
-
-    if (!icon) {
-
-        return;
-
-    }
-
-    icon.textContent = "";
-    icon.classList.add("chaos-lineage-icon");
-
-});
-
-
-/* 운명계보 아이콘 */
-
-document.querySelectorAll(".lineage-card").forEach((card) => {
-
-    const title = card.querySelector("h3");
-
-    if (title?.textContent.trim() !== "운명계보") {
-
-        return;
-
-    }
-
-    const icon = card.querySelector(".sigil");
-
-    if (!icon) {
-
-        return;
-
-    }
-
-    icon.textContent = "";
-    icon.classList.add("fate-lineage-icon");
-
-});
-
-
-/* 천상계보 아이콘 */
-
-document.querySelectorAll(".lineage-card").forEach((card) => {
-
-    const title = card.querySelector("h3");
-
-    if (title?.textContent.trim() !== "천상계보") {
-
-        return;
-
-    }
-
-    const icon = card.querySelector(".sigil");
-
-    if (!icon) {
-
-        return;
-
-    }
-
-    icon.textContent = "";
-    icon.classList.add("heaven-lineage-icon");
-
-});
-
-
-/* 죽음계보 · 천체계보 아이콘 */
-
-document.querySelectorAll(".lineage-card").forEach((card) => {
-
-    const title = card.querySelector("h3");
-    const icon = card.querySelector(".sigil");
-
-    if (!title || !icon) {
-
-        return;
-
-    }
-
-    const name = title.textContent.trim();
-
-    if (name === "죽음계보") {
-
-        icon.textContent = "";
-        icon.classList.add("death-lineage-icon");
-
-    }
-
-    if (name === "천체계보") {
-
-        icon.textContent = "";
-        icon.classList.add("celestial-lineage-icon");
-
-    }
-
-});
-
-
-/* 타 창조신 계보 */
-
-const lineageGrid = document.querySelector(".lineage-grid");
-
-if (lineageGrid && !document.querySelector(".other-creator-lineage")) {
-
-    const otherCreator = document.createElement("article");
-
-    otherCreator.className = "lineage-card other-creator-lineage";
-
-    otherCreator.innerHTML = `
-        <span class="sigil other-creator-lineage-icon">?</span>
-        <h3>타 창조신 계보</h3>
-        <p>로고스 계보에 속하지 않은 다른 신격들이 포함됩니다.</p>
-        <small>다른 창조신에게서 파생된 존재들을 분류합니다.</small>
-    `;
-
-    lineageGrid.appendChild(otherCreator);
-
-}
-
+/* =========================================================
+   7. 현재 보고 있는 메인 섹션 표시
+   ---------------------------------------------------------
+   IntersectionObserver가 현재 보이는 section을 감지해서
+   같은 href를 가진 왼쪽 메뉴 링크에 active를 붙입니다.
+   ========================================================= */
 
 const sections = [...document.querySelectorAll("main section[id]")];
 

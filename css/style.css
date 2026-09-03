@@ -40,7 +40,11 @@
     letter-spacing: 0.18em;
 }
 
-.brand 
+.brand .eyebrow {
+    color: var(--muted);
+    font-size: 8px;
+}
+
 .menu-btn {
     display: none;
     width: 38px;
@@ -73,7 +77,15 @@
     padding-bottom: 16px;
 }
 
-.side-nav 
+.side-nav a {
+    display: block;
+    padding: 11px 8px;
+    border-left: 1px solid #1D1D1D;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
 .side-nav a:hover,
 .side-nav a.active {
     border-left-color: var(--gold);
@@ -639,7 +651,6 @@ footer {
 }
 
 
-
 /* 메인 능력 생성기 틀 */
 
 .ability-maker {
@@ -770,9 +781,6 @@ footer {
 }
 
 
-
-
-
 .ability-maker-result {
 
     flex: 1 1 auto;
@@ -858,6 +866,7 @@ footer {
     cursor: default;
 
 }
+
 
 /* 능력 생성기 텍스트 영역 크기 고정 */
 
@@ -964,11 +973,22 @@ footer {
 
     opacity: 1;
 
-} 
+}
+
+.timeline article > span {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    aspect-ratio: auto;
+    padding: 0;
+    flex: 0 0 50px;
+    border-radius: 50%;
+}
+
 
 @media (max-width: 980px) {
-
-        .side-nav {
+    .side-nav {
         transform: translateX(-100%);
         transition: transform 0.25s ease;
     }
@@ -981,16 +1001,22 @@ footer {
         padding-left: 32px;
     }
 
+    .menu-btn {
+        display: block;
+    }
+
     .lineage-card,
     .access-grid article {
         width: calc(50% - 7px);
     }
+
 
     .observatory-card {
 
         width: calc(50% - 8px);
 
     }
+
 
     .staff-row {
 
@@ -1015,8 +1041,7 @@ footer {
 
 
 @media (max-width: 700px) {
-
-        .topbar {
+    .topbar {
         height: 64px;
         padding: 0 18px;
     }
@@ -1090,7 +1115,8 @@ footer {
         gap: 6px;
         line-height: 1.8;
     }
-    
+
+
     .observatory-card {
 
         width: 100%;
@@ -1156,7 +1182,10 @@ footer {
 
     }
 
+}
 
+
+@media (max-width: 700px) {
 
     .ability-maker-result-wrap {
 
@@ -1164,12 +1193,10 @@ footer {
 
     }
 
+}
 
 
-
-
-/* 모바일 능력 생성기 텍스트 잘림 방지 */
-
+@media (max-width: 700px) {
 
     .ability-maker-field {
 
@@ -1194,25 +1221,6 @@ footer {
 
     }
 
-}
-
-/* 클립보드 복사용 숨김 영역 */
-
-.clipboard-copy-are
-/* 게이트 타임라인 원형 번호 */
-
-.timeline article > span {
-    width: 50px;
-    min-width: 50px;
-    height: 50px;
-    min-height: 50px;
-    aspect-ratio: auto;
-    padding: 0;
-    flex: 0 0 50px;
-    border-radius: 50%;
-}
-
-@media (max-width: 700px) {
     .timeline article > span {
         width: 50px;
         min-width: 50px;
@@ -1221,6 +1229,7 @@ footer {
         flex-basis: 50px;
     }
 }
+
 
 @media (max-width: 520px) {
 
