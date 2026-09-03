@@ -63,28 +63,6 @@
 
 }
 
-.Symbol {
-
-    width: 77%;
-    aspect-ratio: 1 / 1;
-
-    flex: 0 0 auto;
-
-    background-color: var(--gold);
-
-    -webkit-mask-image: url("../../img/PARALLAX_Symbol.png");
-    mask-image: url("../../img/PARALLAX_Symbol.png");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-}
 
 .sub-section {
 
