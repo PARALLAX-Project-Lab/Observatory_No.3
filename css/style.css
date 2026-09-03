@@ -11,6 +11,7 @@
     width: 100%;
     height: 72px;
     padding: 0 28px;
+    color: var(--gold-light);
     background-color: #1E1E1E;
     border-bottom: 1px solid var(--line-soft);
 }
@@ -60,7 +61,7 @@
     flex-direction: column;
     width: 210px;
     padding: 34px 22px;
-    gap: 2px;
+    gap: 16px;
     border-right: 1px solid var(--line-soft);
     background-color: #1D1D1D;
 }
@@ -546,106 +547,6 @@ footer {
     letter-spacing: 0.08em;
 }
 
-@media (max-width: 980px) {
-    .side-nav {
-        transform: translateX(-100%);
-        transition: transform 0.25s ease;
-    }
-
-    .side-nav.open {
-        transform: translateX(0);
-    }
-
-    .page {
-        padding-left: 32px;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .lineage-card,
-    .access-grid article {
-        width: calc(50% - 7px);
-    }
-}
-
-@media (max-width: 700px) {
-    .topbar {
-        height: 64px;
-        padding: 0 18px;
-    }
-
-    .side-nav {
-        top: 64px;
-        width: 230px;
-    }
-
-    .page {
-        padding: 64px 18px 60px;
-    }
-
-    .hero {
-        align-items: flex-start;
-        min-height: auto;
-        padding: 64px 0 48px;
-        gap: 40px;
-    }
-
-    .hero-copy {
-        gap: 14px;
-    }
-
-    .hero h2 {
-        font-size: 38px;
-    }
-
-    .lead {
-        font-size: 14px;
-        line-height: 1.8;
-    }
-
-    .hero-seal {
-        align-self: center;
-        width: 180px;
-    }
-
-    .section {
-        padding-top: 68px;
-        gap: 22px;
-    }
-
-    .section-head {
-        gap: 10px;
-    }
-
-    .section-head h2 {
-        font-size: 31px;
-    }
-
-    .grid.two > *,
-    .ability-list article,
-    .lineage-card,
-    .access-grid article {
-        width: 100%;
-    }
-
-    .facility span {
-        width: 72px;
-    }
-
-    .facility p {
-        padding: 0 14px;
-        font-size: 13px;
-        line-height: 1.55;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 6px;
-        line-height: 1.8;
-    }
-}
 
 /* observatory selector */
 
@@ -737,25 +638,7 @@ footer {
 
 }
 
-@media (max-width: 980px) {
 
-    .observatory-card {
-
-        width: calc(50% - 8px);
-
-    }
-
-}
-
-@media (max-width: 700px) {
-
-    .observatory-card {
-
-        width: 100%;
-
-    }
-
-}
 
 /* 메인 능력 생성기 틀 */
 
@@ -887,91 +770,8 @@ footer {
 }
 
 
-@media (max-width: 980px) {
-
-    .staff-row {
-
-        flex-direction: column;
-
-    }
-
-    .staff-summary,
-    .staff-detail {
-
-        width: 100%;
-
-    }
-
-    .staff-summary {
-
-        max-width: 420px;
-
-    }
-
-}
 
 
-@media (max-width: 700px) {
-
-    .staff-summary {
-
-        width: 100%;
-        max-width: none;
-
-    }
-
-    .staff-detail {
-
-        width: 100%;
-
-    }
-
-    .staff-grid {
-
-        flex-direction: column;
-
-    }
-
-    .staff-grid .card,
-    .staff-grid .card.full,
-    .profile-chip {
-
-        width: 100%;
-
-    }
-
-    .profile-row {
-
-        flex-direction: column;
-
-    }
-
-    .ability-maker {
-
-        padding: 20px;
-
-    }
-
-    .ability-maker-field {
-
-        width: 100%;
-
-    }
-
-    .ability-maker-action {
-
-        align-items: stretch;
-        flex-direction: column;
-
-    }
-
-    .ability-maker-btn {
-
-        width: 100%;
-
-    }
-
-}
 
 .ability-maker-result {
 
@@ -1056,17 +856,6 @@ footer {
     opacity: 0.3;
 
     cursor: default;
-
-}
-
-
-@media (max-width: 700px) {
-
-    .ability-maker-result-wrap {
-
-        align-items: flex-start;
-
-    }
 
 }
 
@@ -1175,11 +964,212 @@ footer {
 
     opacity: 1;
 
+} 
+
+@media (max-width: 980px) {
+
+        .side-nav {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+    }
+
+    .side-nav.open {
+        transform: translateX(0);
+    }
+
+    .page {
+        padding-left: 32px;
+    }
+
+    .lineage-card,
+    .access-grid article {
+        width: calc(50% - 7px);
+    }
+
+    .observatory-card {
+
+        width: calc(50% - 8px);
+
+    }
+
+    .staff-row {
+
+        flex-direction: column;
+
+    }
+
+    .staff-summary,
+    .staff-detail {
+
+        width: 100%;
+
+    }
+
+    .staff-summary {
+
+        max-width: 420px;
+
+    }
+
 }
+
+
+@media (max-width: 700px) {
+
+        .topbar {
+        height: 64px;
+        padding: 0 18px;
+    }
+
+    .side-nav {
+        top: 64px;
+        width: 230px;
+    }
+
+    .page {
+        padding: 64px 18px 60px;
+    }
+
+    .hero {
+        align-items: flex-start;
+        min-height: auto;
+        padding: 64px 0 48px;
+        gap: 40px;
+    }
+
+    .hero-copy {
+        gap: 14px;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .lead {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .hero-seal {
+        align-self: center;
+        width: 180px;
+    }
+
+    .section {
+        padding-top: 68px;
+        gap: 22px;
+    }
+
+    .section-head {
+        gap: 10px;
+    }
+
+    .section-head h2 {
+        font-size: 31px;
+    }
+
+    .grid.two > *,
+    .ability-list article,
+    .lineage-card,
+    .access-grid article {
+        width: 100%;
+    }
+
+    .facility span {
+        width: 72px;
+    }
+
+    .facility p {
+        padding: 0 14px;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 6px;
+        line-height: 1.8;
+    }
+    
+    .observatory-card {
+
+        width: 100%;
+
+    }
+
+
+    .staff-summary {
+
+        width: 100%;
+        max-width: none;
+
+    }
+
+    .staff-detail {
+
+        width: 100%;
+
+    }
+
+    .staff-grid {
+
+        flex-direction: column;
+
+    }
+
+    .staff-grid .card,
+    .staff-grid .card.full,
+    .profile-chip {
+
+        width: 100%;
+
+    }
+
+    .profile-row {
+
+        flex-direction: column;
+
+    }
+
+    .ability-maker {
+
+        padding: 20px;
+
+    }
+
+    .ability-maker-field {
+
+        width: 100%;
+
+    }
+
+    .ability-maker-action {
+
+        align-items: stretch;
+        flex-direction: column;
+
+    }
+
+    .ability-maker-btn {
+
+        width: 100%;
+
+    }
+
+
+
+    .ability-maker-result-wrap {
+
+        align-items: flex-start;
+
+    }
+
+
+
+
 
 /* 모바일 능력 생성기 텍스트 잘림 방지 */
 
-@media (max-width: 700px) {
 
     .ability-maker-field {
 
