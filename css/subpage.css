@@ -2,126 +2,6 @@
 
 @import url("common.css");
 
-.sub-top {
-
-    position: sticky;
-    z-index: 30;
-
-    top: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-
-    padding: 18px 28px;
-
-    border-bottom: 1px solid var(--line);
-
-    background-color: #1E1E1E;
-
-}
-
-.sub-brand {
-
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-}
-
-.sub-brand strong {
-
-    color: var(--text);
-
-    font-size: 17px;
-
-    letter-spacing: 0.14em;
-
-}
-
-.back-link {
-
-    flex: 0 0 auto;
-
-    padding: 8px 12px;
-
-    border: 1px solid var(--line);
-    border-radius: 6px;
-
-    color: var(--muted);
-
-    font-size: 12px;
-
-}
-
-.back-link:hover {
-
-    color: var(--text);
-
-    border-color: var(--gold-dark);
-
-}
-
-.sub-nav {
-
-    position: sticky;
-    z-index: 20;
-
-    top: 69px;
-
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-
-    overflow-x: auto;
-
-    padding: 0 28px;
-
-    gap: 6px;
-
-    border-bottom: 1px solid var(--line);
-
-    background-color: #242424;
-
-}
-
-.sub-nav 
-.sub-nav a:hover,
-.sub-nav a.active {
-
-    color: var(--text);
-
-    border-bottom-color: var(--gold);
-
-}
-
-.sub-page {
-
-    display: flex;
-    justify-content: center;
-
-    width: 100%;
-
-}
-
-.sub-wrap {
-
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    max-width: var(--max);
-
-    padding: 64px 28px 90px;
-
-    gap: 76px;
-
-}
-
 .sub-hero {
 
     display: flex;
@@ -183,7 +63,28 @@
 
 }
 
+.Symbol {
 
+    width: 77%;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    background-color: var(--gold);
+
+    -webkit-mask-image: url("../../img/PARALLAX_Symbol.png");
+    mask-image: url("../../img/PARALLAX_Symbol.png");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+}
 
 .sub-section {
 
@@ -340,7 +241,6 @@
     line-height: 1.65;
 
 }
-
 
 /* 인물 이미지 공통 클래스 */
 
@@ -604,32 +504,14 @@
 
 }
 
-
 /* tablet */
-
 
 /* JS 없이 처리하는 제3관측동 고정 콘텐츠 */
 
 /* 기존 '메인으로' 링크를 로고 위 투명 링크 영역으로 사용 */
-.sub-top-in {
-    position: relative;
-}
-
-.back-link {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 28px;
-    width: 150px;
-    height: 100%;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-    opacity: 0;
-    font-size: 0;
-}
 
 /* 고정 프로필은 JS 생성 대신 CSS 배경이미지로 표시 */
+
 section[data-nav="copycat"] .person-placeholder,
 section[data-nav="observer"] .person-placeholder {
     background-color: #FFFFFF;
@@ -657,9 +539,10 @@ section[data-nav="observer"] .person-card:nth-child(3) .person-placeholder {
 }
 
 /* 아직 이미지를 만들지 않은 보안팀 / Gilo */
+
 section[data-nav="security-member"] .person-visual,
 section[data-nav="gilo"] .person-visual {
-    min-height: 72px;
+    min-height: 256px;
     aspect-ratio: auto;
 }
 
@@ -677,174 +560,9 @@ section[data-nav="gilo"] .person-placeholder::before {
     letter-spacing: 0.05em;
 }
 
-
 /* mobile */
 
-
 /* layout fix */
-
-.sub-top {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 72px;
-
-    padding: 0;
-
-}
-
-.sub-top-in {
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-    max-width: var(--max);
-
-    padding: 0 28px;
-
-}
-
-.sub-brand-symbol {
-
-    width: 24px;
-    aspect-ratio: 1 / 1;
-
-    flex: 0 0 auto;
-
-    background-color: var(--gold);
-
-    -webkit-mask-image: url("../img/PARALLAX_Symbol.png");
-    mask-image: url("../img/PARALLAX_Symbol.png");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-
-}
-
-.sub-nav {
-
-    top: 72px;
-
-    display: flex;
-    justify-content: center;
-
-    padding: 0;
-
-}
-
-.sub-nav-in {
-
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-    max-width: var(--max);
-
-    padding: 0 28px;
-
-    gap: 6px;
-
-    overflow-x: auto;
-
-}
-
-.staff-list {
-
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-
-    gap: 18px;
-
-}
-
-.staff-row {
-
-    display: flex;
-    align-items: stretch;
-
-    width: 100%;
-
-    gap: 16px;
-
-}
-
-.staff-summary {
-
-    display: flex;
-    flex-direction: column;
-
-    width: 31%;
-
-    flex: 0 0 auto;
-
-    padding: 18px;
-
-    gap: 12px;
-
-    border: 1px solid var(--line);
-    border-radius: 10px;
-
-    background-color: var(--card);
-
-}
-
-.staff-summary p {
-
-    color: var(--text-sub);
-
-    font-size: 13px;
-
-    line-height: 1.7;
-
-}
-
-.staff-summary strong {
-
-    color: var(--gold-light);
-
-}
-
-.staff-detail {
-
-    display: flex;
-    flex-direction: column;
-
-    width: calc(69% - 16px);
-
-    gap: 16px;
-
-}
-
-.staff-detail > .card {
-
-    width: 100%;
-
-}
-
-.staff-grid {
-
-    gap: 16px;
-
-}
-
-.staff-grid .card {
-
-    width: calc(50% - 8px);
-
-}
-
 
 /* 개발자 검사창 확인용 숨김 텍스트 */
 
@@ -856,262 +574,187 @@ section[data-nav="gilo"] .person-placeholder::before {
 
 /* 서브페이지 헤더 */
 
-.sub-top-in {
-
-    justify-content: flex-start;
-
-}
-
-.sub-brand.home-link {
-
-    flex: 0 0 auto;
-
-    cursor: pointer;
-
-}
-
 /* 인물 상세 반응형 오류 수정 */
-
-.staff-row {
-
-    align-items: flex-start;
-
-}
-
-.staff-summary {
-
-    align-self: flex-start;
-
-    height: auto;
-
-}
-
-.staff-detail {
-
-    flex: 1 1 0;
-
-    min-width: 0;
-
-}
-
-.staff-detail > .card {
-
-    width: 100%;
-    min-width: 0;
-
-    flex: 0 0 auto;
-
-}
-
-.staff-grid {
-
-    display: flex;
-    flex-wrap: wrap;
-
-    width: 100%;
-
-    gap: 16px;
-
-}
-
-.staff-grid .card {
-
-    width: calc(50% - 8px);
-    min-width: 0;
-
-    flex: 0 0 auto;
-
-}
-
-.staff-grid .card.full {
-
-    width: 100%;
-
-}
-
-.card,
-.staff-summary,
-.staff-detail {
-
-    min-width: 0;
-
-}
-
-.card p,
-.card li,
-.staff-summary p {
-
-    overflow-wrap: break-word;
-
-    word-break: keep-all;
-
-}
 
 /* 서브메뉴 가로 드래그 */
 
-.sub-nav-in {
+/* 메인과 동일한 메뉴 구조 */
 
-    overflow-x: auto;
-
-    cursor: grab;
-
-    scrollbar-width: none;
-
-    -ms-overflow-style: none;
-
-    touch-action: pan-x;
-
-    user-select: none;
-
+.sub-page {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 72px 32px 80px 242px;
 }
 
-.sub-nav-in::-webkit-scrollbar {
-
-    display: none;
-
+.sub-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--max);
+    padding: 64px 0 90px;
+    gap: 76px;
 }
 
-.sub-nav-in.dragging {
+/* 인물 상세 */
 
-    cursor: grabbing;
-
+.staff-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 22px;
 }
 
-.sub-nav-in a {
+.staff-row {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background-color: #202020;
+}
+
+.staff-summary {
+    display: flex;
+    flex-direction: column;
+    width: 34%;
     flex: 0 0 auto;
-    user-select: none;
+    min-width: 0;
+    padding: 0;
+    gap: 12px;
 }
 
+.staff-summary p {
+    color: var(--text-sub);
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+}
+
+.staff-summary strong {
+    color: var(--gold-light);
+}
+
+.staff-detail {
+    display: flex;
+    flex: 1 1 0;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    min-width: 0;
+    gap: 16px;
+}
+
+.staff-detail > .card {
+    width: calc(50% - 8px);
+    min-width: 0;
+    flex: 0 0 auto;
+}
+
+.staff-detail > .card:last-child:nth-child(odd) {
+    width: 100%;
+}
+
+.staff-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 16px;
+}
+
+.staff-grid .card {
+    width:100%;
+    min-width: 0;
+    flex: 0 0 auto;
+}
+
+.staff-grid .card.full {
+    width: 100%;
+}
+
+.card {
+    min-width: 0;
+}
+
+.card p,
+.card li {
+    overflow-wrap: break-word;
+    word-break: keep-all;
+}
 
 @media (max-width: 980px) {
 
-    .sub-hero {
+.sub-hero {
 
         flex-direction: column;
         align-items: flex-start;
 
     }
 
-    .hero-copy {
+.hero-copy {
 
         width: 100%;
 
     }
 
-    .hero-symbol {
+.hero-symbol {
 
         align-self: center;
 
     }
 
-    .person-card {
+.person-card {
 
         width: calc(50% - 8px);
 
     }
 
-    .profile-chip {
+.sub-page { padding-left: 32px; }
 
-        width: calc(50% - 6px);
+.staff-row { flex-direction: column; }
 
-    }
+.staff-summary,
+.staff-detail { width: 100%; }
 
-}
-
-
-@media (max-width: 980px) {
-
-    .staff-row {
-
-        flex-direction: column;
-
-    }
-
-    .staff-summary,
-    .staff-detail {
-
-        width: 100%;
-
-    }
-
-    .staff-summary {
-
-        max-width: 420px;
-
-    }
+.staff-summary { max-width: 420px; }
 
 }
-
 
 @media (max-width: 700px) {
 
-    .back-link {
-        left: 18px;
-    }
-
-
-    .sub-top {
-
-        padding: 15px 18px;
-
-    }
-
-    .sub-nav {
-
-        top: 63px;
-
-        padding: 0 18px;
-
-    }
-
-    .sub-wrap {
-
-        padding: 44px 18px 64px;
-
-        gap: 56px;
-
-    }
-
-    .sub-hero {
+.sub-hero {
 
         gap: 36px;
 
     }
 
-    .sub-hero h1 {
+.sub-hero h1 {
 
         font-size: 38px;
 
     }
 
-    .hero-symbol {
+.hero-symbol {
 
         width: 190px;
 
     }
 
-    .card,
-    .card.third,
-    .person-card,
-    .profile-chip {
-
-        width: 100%;
-
-    }
-
-    .section-head h2 {
+.section-head h2 {
 
         font-size: 28px;
 
     }
 
-    .floor-list strong {
+.floor-list strong {
 
         width: 72px;
 
     }
 
-    .floor-list p {
+.floor-list p {
 
         padding: 0 14px;
 
@@ -1119,51 +762,24 @@ section[data-nav="gilo"] .person-placeholder::before {
 
     }
 
-    .sub-footer {
+.sub-footer {
 
         flex-direction: column;
 
     }
 
-}
+.sub-page { padding: 64px 18px 64px; }
 
+.sub-wrap { padding: 44px 0 64px; gap: 56px; }
 
-@media (max-width: 700px) {
+.staff-row { padding: 16px; }
 
-    .sub-top {
+.staff-summary { max-width: none; }
 
-        height: 64px;
-
-    }
-
-    .sub-top-in {
-
-        padding: 0 18px;
-
-    }
-
-    .sub-nav {
-
-        top: 64px;
-
-    }
-
-    .sub-nav-in {
-
-        padding: 0 18px;
-
-    }
-
-    .staff-summary {
-
-        max-width: none;
-
-    }
-
-    .staff-grid .card {
-
-        width: 100%;
-
-    }
+.staff-detail > .card,
+.staff-detail > .card:last-child:nth-child(odd),
+.staff-grid .card,
+.staff-grid .card.full,
+.profile-chip { width: 100%; }
 
 }
