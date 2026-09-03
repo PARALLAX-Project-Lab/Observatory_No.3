@@ -1,5 +1,18 @@
 @charset "utf-8";
 
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+*,
+*::before,
+*::after,
+button,
+input,
+select,
+textarea {
+    font-family: "Pretendard", sans-serif;
+}
+
+
 :root {
     --bg: #1E1E1E;
     --bg-sub: #242424;
@@ -44,7 +57,7 @@ button {
 }
 
 .icon {
-    width: 24px;
+    width: 3%;
     aspect-ratio: 1 / 1;
     flex: 0 0 auto;
     padding: 0;
@@ -631,107 +644,7 @@ footer {
     letter-spacing: 0.08em;
 }
 
-@media (max-width: 980px) {
-    .side-nav {
-        transform: translateX(-100%);
-        transition: transform 0.25s ease;
-    }
 
-    .side-nav.open {
-        transform: translateX(0);
-    }
-
-    .page {
-        padding-left: 32px;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .lineage-card,
-    .access-grid article {
-        width: calc(50% - 7px);
-    }
-}
-
-@media (max-width: 700px) {
-    .topbar {
-        height: 64px;
-        padding: 0 18px;
-    }
-
-    .side-nav {
-        top: 64px;
-        width: 230px;
-    }
-
-    .page {
-        padding: 64px 18px 60px;
-    }
-
-    .hero {
-        flex-direction: column;
-        align-items: flex-start;
-        min-height: auto;
-        padding: 64px 0 48px;
-        gap: 40px;
-    }
-
-    .hero-copy {
-        gap: 14px;
-    }
-
-    .hero h2 {
-        font-size: 38px;
-    }
-
-    .lead {
-        font-size: 14px;
-        line-height: 1.8;
-    }
-
-    .hero-seal {
-        align-self: center;
-        width: 180px;
-    }
-
-    .section {
-        padding-top: 68px;
-        gap: 22px;
-    }
-
-    .section-head {
-        gap: 10px;
-    }
-
-    .section-head h2 {
-        font-size: 31px;
-    }
-
-    .grid.two > *,
-    .ability-list article,
-    .lineage-card,
-    .access-grid article {
-        width: 100%;
-    }
-
-    .facility span {
-        width: 72px;
-    }
-
-    .facility p {
-        padding: 0 14px;
-        font-size: 13px;
-        line-height: 1.55;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 6px;
-        line-height: 1.8;
-    }
-}
 
 /* observatory selector */
 
@@ -823,7 +736,440 @@ footer {
 
 }
 
+
+
+/* 계보 아이콘 */
+
+.lineage-icon {
+    display: block;
+    width: 29px;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 auto;
+    background-color: var(--gold-light);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    color: transparent;
+}
+
+.lineage-heaven {
+    -webkit-mask-image: url("../icon/wings.svg");
+    mask-image: url("../icon/wings.svg");
+}
+
+.lineage-chaos {
+    -webkit-mask-image: url("../icon/chaos-lineage.svg");
+    mask-image: url("../icon/chaos-lineage.svg");
+}
+
+.lineage-fate {
+    -webkit-mask-image: url("../icon/quill-pen.svg");
+    mask-image: url("../icon/quill-pen.svg");
+}
+
+.lineage-death {
+    -webkit-mask-image: url("../icon/inscription.svg");
+    mask-image: url("../icon/inscription.svg");
+}
+
+.lineage-time {
+    -webkit-mask-image: url("../icon/hourglass.svg");
+    mask-image: url("../icon/hourglass.svg");
+}
+
+.lineage-celestial {
+    -webkit-mask-image: url("../icon/galaxy.svg");
+    mask-image: url("../icon/galaxy.svg");
+}
+
+.lineage-other {
+    color: var(--gold-light);
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* 메인 능력 생성기 틀 */
+
+.ability-maker {
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    padding: 30px;
+
+    gap: 22px;
+
+    border: 1px solid var(--line);
+    border-radius: 12px;
+
+    background-color: var(--card);
+
+}
+
+.ability-maker-head {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+.ability-maker-head h3 {
+
+    color: var(--gold-light);
+
+    font-size: 22px;
+    font-weight: 700;
+
+}
+
+.ability-maker-head p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+.ability-maker-fields {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    gap: 12px;
+
+}
+
+.ability-maker-field {
+
+    display: flex;
+    flex-direction: column;
+
+    width: calc(50% - 6px);
+
+    padding: 18px;
+
+    gap: 8px;
+
+    border: 1px solid var(--line);
+    border-radius: 9px;
+
+    background-color: var(--bg-sub);
+
+}
+
+.ability-maker-field strong {
+
+    color: var(--text-sub);
+
+    font-size: 16px;
+
+}
+
+.ability-maker-field span {
+
+    color: var(--muted-dark);
+
+    font-size: 14px;
+
+}
+
+.ability-maker-action {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    gap: 16px;
+
+}
+
+.ability-maker-btn {
+
+    flex: 0 0 auto;
+
+    padding: 12px 22px;
+
+    border: 1px solid var(--gold-dark);
+    border-radius: 8px;
+
+    background-color: #24221E;
+    color: var(--gold-light);
+
+    font-weight: 700;
+
+}
+
+.ability-maker-result {
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+
+.ability-maker-result {
+
+    flex: 1 1 auto;
+
+    line-height: 1.75;
+
+}
+
+.ability-maker-result strong {
+
+    color: var(--gold-light);
+
+    font-weight: 700;
+
+}
+
+/* 능력 결과 복사 */
+
+.ability-maker-result-wrap {
+
+    display: flex;
+    align-items: flex-start;
+
+    width: 100%;
+
+    gap: 14px;
+
+}
+
+.ability-maker-result {
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+}
+
+.ability-copy-btn {
+
+    width: 24px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    padding: 0;
+
+    border: 0;
+
+    background-color: var(--gold-light);
+
+    -webkit-mask-image: url("../icon/copy_line.svg");
+    mask-image: url("../icon/copy_line.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+}
+
+.ability-copy-btn:hover {
+
+    background-color: var(--text);
+
+}
+
+.ability-copy-btn:active,
+.ability-copy-btn.copied {
+
+    -webkit-mask-image: url("../icon/copy_block.svg");
+    mask-image: url("../icon/copy_block.svg");
+
+}
+
+.ability-copy-btn:disabled {
+
+    opacity: 0.3;
+
+    cursor: default;
+
+}
+
+
+
+/* 능력 생성기 텍스트 영역 크기 고정 */
+
+.ability-maker-field {
+
+    min-height: 96px;
+    max-height: 96px;
+
+    overflow-y: auto;
+
+}
+
+.ability-maker-result-wrap {
+
+    min-height: 150px;
+    max-height: 150px;
+
+    overflow: hidden;
+
+}
+
+.ability-maker-result {
+
+    max-height: 118px;
+
+    overflow-y: auto;
+
+}
+
+/* 능력 생성기 배치 수정 */
+
+.ability-maker-result-wrap {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 18px 54px 18px 18px;
+
+    border: 1px solid var(--line);
+    border-radius: 9px;
+
+    background-color: var(--bg-sub);
+
+}
+
+.ability-copy-btn {
+
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+}
+
+.ability-maker-action {
+
+    justify-content: flex-end;
+
+}
+
+/* 능력 결과 스크롤바 숨김 + 하단 페이드 */
+
+.ability-maker-result {
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+}
+
+.ability-maker-result::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+.ability-maker-result-wrap::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 54px;
+    bottom: 0;
+
+    height: 32px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(36, 36, 36, 0),
+        var(--bg-sub)
+    );
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition: opacity 0.18s ease;
+
+}
+
+.ability-maker-result-wrap.has-overflow:not(.at-bottom)::after {
+
+    opacity: 1;
+
+}
+
+/* 모바일 능력 생성기 텍스트 잘림 방지 */
+
+
+
+/* 클립보드 복사용 숨김 영역 */
+
+.clipboard-copy-area {
+
+    position: fixed;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+/* 게이트 타임라인 원형 번호 */
+
+.timeline article > span {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    aspect-ratio: auto;
+    padding: 0;
+    flex: 0 0 50px;
+    border-radius: 50%;
+}
+
+
 @media (max-width: 980px) {
+
+    .staff-row {
+
+        flex-direction: column;
+
+    }
+
+    .staff-summary,
+    .staff-detail {
+
+        width: 100%;
+
+    }
+
+    .staff-summary {
+
+        max-width: 420px;
+
+    }
+
+
 
     .observatory-card {
 
@@ -831,9 +1177,106 @@ footer {
 
     }
 
+    .side-nav {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+    }
+
+    .side-nav.open {
+        transform: translateX(0);
+    }
+
+    .page {
+        padding-left: 32px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .lineage-card,
+    .access-grid article {
+        width: calc(50% - 7px);
+    }
 }
 
 @media (max-width: 700px) {
+
+    .topbar {
+        height: 64px;
+        padding: 0 18px;
+    }
+
+    .side-nav {
+        top: 64px;
+        width: 230px;
+    }
+
+    .page {
+        padding: 64px 18px 60px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 64px 0 48px;
+        gap: 40px;
+    }
+
+    .hero-copy {
+        gap: 14px;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .lead {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .hero-seal {
+        align-self: center;
+        width: 180px;
+    }
+
+    .section {
+        padding-top: 68px;
+        gap: 22px;
+    }
+
+    .section-head {
+        gap: 10px;
+    }
+
+    .section-head h2 {
+        font-size: 31px;
+    }
+
+    .grid.two > *,
+    .ability-list article,
+    .lineage-card,
+    .access-grid article {
+        width: 100%;
+    }
+
+    .facility span {
+        width: 72px;
+    }
+
+    .facility p {
+        padding: 0 14px;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 6px;
+        line-height: 1.8;
+    }
 
     .observatory-card {
 
@@ -841,5 +1284,100 @@ footer {
 
     }
 
-}
+    .staff-summary {
 
+        width: 100%;
+        max-width: none;
+
+    }
+
+    .staff-detail {
+
+        width: 100%;
+
+    }
+
+    .staff-grid {
+
+        flex-direction: column;
+
+    }
+
+    .staff-grid .card,
+    .staff-grid .card.full,
+    .profile-chip {
+
+        width: 100%;
+
+    }
+
+    .profile-row {
+
+        flex-direction: column;
+
+    }
+
+    .ability-maker {
+
+        padding: 20px;
+
+    }
+
+    .ability-maker-field {
+
+        width: 100%;
+
+    }
+
+    .ability-maker-action {
+
+        align-items: stretch;
+        flex-direction: column;
+
+    }
+
+    .ability-maker-btn {
+
+        width: 100%;
+
+    }
+
+
+
+    .ability-maker-result-wrap {
+
+        align-items: flex-start;
+
+    }
+
+    .ability-maker-field {
+
+        min-height: 110px;
+        max-height: none;
+
+        overflow: visible;
+
+    }
+
+    .ability-maker-field span {
+
+        display: block;
+
+        width: 100%;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: keep-all;
+
+        line-height: 1.55;
+
+    }
+
+    .timeline article > span {
+        width: 50px;
+        min-width: 50px;
+        height: 50px;
+        min-height: 50px;
+        flex-basis: 50px;
+    }
+}

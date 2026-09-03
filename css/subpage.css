@@ -1,5 +1,18 @@
 @charset "utf-8";
 
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+*,
+*::before,
+*::after,
+button,
+input,
+select,
+textarea {
+    font-family: "Pretendard", sans-serif;
+}
+
+
 :root {
 
     --bg: #1E1E1E;
@@ -161,6 +174,7 @@ a {
 
     display: flex;
     justify-content: center;
+
     width: 100%;
 
 }
@@ -983,6 +997,201 @@ a {
 
 }
 
+
+
+/* 개발자 검사창 확인용 숨김 텍스트 */
+
+.inspect-hide {
+
+    display: none;
+
+}
+
+/* 서브페이지 헤더 */
+
+.sub-top-in {
+
+    justify-content: flex-start;
+
+}
+
+.sub-brand.home-link {
+
+    flex: 0 0 auto;
+
+    cursor: pointer;
+
+}
+
+/* 인물 상세 반응형 오류 수정 */
+
+.staff-row {
+
+    align-items: flex-start;
+
+}
+
+.staff-summary {
+
+    align-self: flex-start;
+
+    height: auto;
+
+}
+
+.staff-detail {
+
+    flex: 1 1 0;
+
+    min-width: 0;
+
+}
+
+.staff-detail > .card {
+
+    width: 100%;
+    min-width: 0;
+
+    flex: 0 0 auto;
+
+}
+
+.staff-grid {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    gap: 16px;
+
+}
+
+.staff-grid .card {
+
+    width: calc(50% - 8px);
+    min-width: 0;
+
+    flex: 0 0 auto;
+
+}
+
+.staff-grid .card.full {
+
+    width: 100%;
+
+}
+
+.card,
+.staff-summary,
+.staff-detail {
+
+    min-width: 0;
+
+}
+
+.card p,
+.card li,
+.staff-summary p {
+
+    overflow-wrap: break-word;
+
+    word-break: keep-all;
+
+}
+
+/* 서브메뉴 가로 드래그 */
+
+.sub-nav-in {
+
+    overflow-x: auto;
+
+    cursor: grab;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+
+    touch-action: pan-x;
+
+    user-select: none;
+
+}
+
+.sub-nav-in::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+.sub-nav-in.dragging {
+
+    cursor: grabbing;
+
+}
+
+.sub-nav-in a {
+
+    flex: 0 0 auto;
+
+    user-select: none;
+
+}
+
+/* 제3관측동 투명 프로필 이미지 */
+
+.person-visual.profile-white {
+
+    background-color: #FFFFFF;
+
+}
+
+.person-visual.profile-white .person-img {
+
+    object-fit: contain;
+    object-position: center bottom;
+
+}
+
+/* 프로필 인물 높이 통일 */
+
+.person-visual.profile-white .person-img {
+
+    width: auto;
+    height: 100%;
+    max-width: none;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+}
+
+.person-visual.profile-white .profile-ink {
+
+    height: 94%;
+
+}
+
+/* 미제작 인물 이미지 */
+
+.person-visual.image-pending {
+
+    min-height: 72px;
+    aspect-ratio: auto;
+
+    background-color: var(--card-sub);
+
+}
+
+.person-visual.image-pending .person-placeholder {
+
+    color: var(--muted);
+
+    font-size: 12px;
+    letter-spacing: 0.05em;
+
+}
+
 @media (max-width: 980px) {
 
     .staff-row {
@@ -1043,13 +1252,5 @@ a {
         width: 100%;
 
     }
-
-}
-
-/* 개발자 검사창 확인용 숨김 텍스트 */
-
-.inspect-hide {
-
-    display: none;
 
 }

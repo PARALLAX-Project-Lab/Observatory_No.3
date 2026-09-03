@@ -1,11 +1,3 @@
-const patchStyle = document.createElement("link");
-
-patchStyle.rel = "stylesheet";
-patchStyle.href = "../../css/patch.css";
-
-document.head.appendChild(patchStyle);
-
-
 const subTop = document.querySelector(".sub-top");
 const subTopIn = document.querySelector(".sub-top-in");
 const subBrand = document.querySelector(".sub-brand");
