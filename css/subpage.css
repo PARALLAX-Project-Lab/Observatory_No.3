@@ -257,16 +257,17 @@ a {
 
     flex: 0 0 auto;
 
-    border: 1px solid var(--gold-dark);
-    border-radius: 50%;
+    border: 0;
 
-    background-color: var(--card);
+    border-radius: 0;
+
+    background-color: transparent;
 
 }
 
 .Symbol {
 
-    width: 62%;
+    width: 77%;
     aspect-ratio: 1 / 1;
 
     flex: 0 0 auto;
@@ -714,124 +715,7 @@ a {
 }
 
 
-/* tablet */
 
-@media (max-width: 980px) {
-
-    .sub-hero {
-
-        flex-direction: column;
-        align-items: flex-start;
-
-    }
-
-    .hero-copy {
-
-        width: 100%;
-
-    }
-
-    .hero-symbol {
-
-        align-self: center;
-
-    }
-
-    .person-card {
-
-        width: calc(50% - 8px);
-
-    }
-
-    .profile-chip {
-
-        width: calc(50% - 6px);
-
-    }
-
-}
-
-
-/* mobile */
-
-@media (max-width: 700px) {
-
-    .sub-top {
-
-        padding: 15px 18px;
-
-    }
-
-    .sub-nav {
-
-        top: 63px;
-
-        padding: 0 18px;
-
-    }
-
-    .sub-wrap {
-
-        padding: 44px 18px 64px;
-
-        gap: 56px;
-
-    }
-
-    .sub-hero {
-
-        gap: 36px;
-
-    }
-
-    .sub-hero h1 {
-
-        font-size: 38px;
-
-    }
-
-    .hero-symbol {
-
-        width: 190px;
-
-    }
-
-    .card,
-    .card.third,
-    .person-card,
-    .profile-chip {
-
-        width: 100%;
-
-    }
-
-    .section-head h2 {
-
-        font-size: 28px;
-
-    }
-
-    .floor-list strong {
-
-        width: 72px;
-
-    }
-
-    .floor-list p {
-
-        padding: 0 14px;
-
-        font-size: 13px;
-
-    }
-
-    .sub-footer {
-
-        flex-direction: column;
-
-    }
-
-}
 
 /* layout fix */
 
@@ -996,8 +880,6 @@ a {
     width: calc(50% - 8px);
 
 }
-
-
 
 /* 개발자 검사창 확인용 숨김 텍스트 */
 
@@ -1192,6 +1074,7 @@ a {
 
 }
 
+
 @media (max-width: 980px) {
 
     .staff-row {
@@ -1213,9 +1096,122 @@ a {
 
     }
 
+
+/* tablet */
+
+
+    .sub-hero {
+
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .hero-copy {
+
+        width: 100%;
+
+    }
+
+    .hero-symbol {
+
+        align-self: center;
+
+    }
+
+    .person-card {
+
+        width: calc(50% - 8px);
+
+    }
+
+    .profile-chip {
+
+        width: calc(50% - 6px);
+
+    }
+
 }
 
+
+/* mobile */
+
 @media (max-width: 700px) {
+
+    .sub-top {
+
+        padding: 15px 18px;
+
+    }
+
+    .sub-nav {
+
+        top: 63px;
+
+        padding: 0 18px;
+
+    }
+
+    .sub-wrap {
+
+        padding: 44px 18px 64px;
+
+        gap: 56px;
+
+    }
+
+    .sub-hero {
+
+        gap: 36px;
+
+    }
+
+    .sub-hero h1 {
+
+        font-size: 38px;
+
+    }
+
+    .hero-symbol {
+
+        width: 190px;
+
+    }
+
+    .card,
+    .card.third,
+    .person-card,
+    .profile-chip {
+
+        width: 100%;
+
+    }
+
+    .section-head h2 {
+
+        font-size: 28px;
+
+    }
+
+    .floor-list strong {
+
+        width: 72px;
+
+    }
+
+    .floor-list p {
+
+        padding: 0 14px;
+
+        font-size: 13px;
+
+    }
+
+    .sub-footer {
+
+        flex-direction: column;
+
+    }
 
     .sub-top {
 
@@ -1254,3 +1250,4 @@ a {
     }
 
 }
+

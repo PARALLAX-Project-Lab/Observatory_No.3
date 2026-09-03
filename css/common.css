@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+/* 공통 이미지 마스크 */
+
+.icon,
+.lineage-icon,
+.ability-icon::before,
+.Symbol {
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+}
+
+.icon {
+
+    width: 24px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    padding: 0;
+
+    border: 0;
+
+    cursor: pointer;
+
+    background-color: var(--text);
+
+    transition: transform 0.25s ease;
+
+}
+
+
+/* PARALLAX 심볼 */
+
+.Symbol {
+
+    width: 62%;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    background-color: var(--gold);
+
+    -webkit-mask-image: url("../img/PARALLAX_Symbol.png");
+    mask-image: url("../img/PARALLAX_Symbol.png");
+
+}
+
+
+/* 계보 아이콘 */
+
+.lineage-icon {
+
+    display: block;
+
+    width: 29px;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    background-color: var(--gold-light);
+
+    color: transparent;
+
+}
+
+.lineage-heaven {
+
+    -webkit-mask-image: url("../icon/wings.svg");
+    mask-image: url("../icon/wings.svg");
+
+}
+
+.lineage-chaos {
+
+    -webkit-mask-image: url("../icon/chaos-lineage.svg");
+    mask-image: url("../icon/chaos-lineage.svg");
+
+}
+
+.lineage-fate {
+
+    -webkit-mask-image: url("../icon/quill-pen.svg");
+    mask-image: url("../icon/quill-pen.svg");
+
+}
+
+.lineage-death {
+
+    -webkit-mask-image: url("../icon/inscription.svg");
+    mask-image: url("../icon/inscription.svg");
+
+}
+
+.lineage-time {
+
+    -webkit-mask-image: url("../icon/hourglass.svg");
+    mask-image: url("../icon/hourglass.svg");
+
+}
+
+.lineage-celestial {
+
+    -webkit-mask-image: url("../icon/galaxy.svg");
+    mask-image: url("../icon/galaxy.svg");
+
+}
+
+.lineage-other {
+
+    color: var(--gold-light);
+
+    font-size: 29px;
+    font-weight: 700;
+
+    line-height: 1;
+
+}
+
+
+/* 능력계 아이콘 */
+
+.ability-icon::before {
+
+    content: "";
+
+    display: block;
+
+    width: 23px;
+    aspect-ratio: 1 / 1;
+
+    background-color: var(--gold-light);
+
+}
+
+.ability-light::before {
+
+    -webkit-mask-image: url("../icon/shape_Ability.svg");
+    mask-image: url("../icon/shape_Ability.svg");
+
+}
+
+.ability-chaos::before {
+
+    -webkit-mask-image: url("../icon/chaos_Ability.svg");
+    mask-image: url("../icon/chaos_Ability.svg");
+
+}
+
+.ability-fate::before {
+
+    width: 25px;
+
+    -webkit-mask-image: url("../icon/fountain-pen_Ability.svg");
+    mask-image: url("../icon/fountain-pen_Ability.svg");
+
+}
+
+.ability-death::before {
+
+    width: 25px;
+
+    -webkit-mask-image: url("../icon/coffin_Ability.svg");
+    mask-image: url("../icon/coffin_Ability.svg");
+
+}
+
+.ability-time::before {
+
+    width: 24px;
+
+    -webkit-mask-image: url("../icon/sandclock_Ability.svg");
+    mask-image: url("../icon/sandclock_Ability.svg");
+
+}
+
+.ability-life::before {
+
+    width: 25px;
+
+    -webkit-mask-image: url("../icon/palm_Ability.svg");
+    mask-image: url("../icon/palm_Ability.svg");
+
+}
+
+.ability-celestial::before {
+
+    -webkit-mask-image: url("../icon/galaxy_Ability.svg");
+    mask-image: url("../icon/galaxy_Ability.svg");
+
+}
