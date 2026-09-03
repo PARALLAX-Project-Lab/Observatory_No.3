@@ -95,7 +95,7 @@ if (page && !document.querySelector("#ability-maker")) {
 
             <div class="ability-maker-head">
 
-                <h3>능력 생성기</h3>
+                <h3>랜덤능력</h3>
 
                 <p>등록된 능력 중 하나를 무작위로 출력합니다.</p>
 
