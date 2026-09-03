@@ -73,6 +73,80 @@ button {
     transition: transform 0.25s ease;
 }
 
+
+
+/* 능력계 아이콘 */
+
+.ability-icon::before {
+
+    content: "";
+
+    display: block;
+
+    width: 20px;
+    aspect-ratio: 1 / 1;
+
+    background-color: var(--gold-light);
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+}
+
+.ability-light::before {
+
+    -webkit-mask-image: url("../icon/shape_Ability.svg");
+    mask-image: url("../icon/shape_Ability.svg");
+
+}
+
+.ability-chaos::before {
+
+    -webkit-mask-image: url("../icon/chaos_Ability.svg");
+    mask-image: url("../icon/chaos_Ability.svg");
+
+}
+
+.ability-fate::before {
+
+    -webkit-mask-image: url("../icon/fountain-pen_Ability.svg");
+    mask-image: url("../icon/fountain-pen_Ability.svg");
+
+}
+
+.ability-death::before {
+
+    -webkit-mask-image: url("../icon/coffin_Ability.svg");
+    mask-image: url("../icon/coffin_Ability.svg");
+
+}
+
+.ability-time::before {
+
+    -webkit-mask-image: url("../icon/sandclock_Ability.svg");
+    mask-image: url("../icon/sandclock_Ability.svg");
+
+}
+
+.ability-life::before {
+
+    -webkit-mask-image: url("../icon/palm_Ability.svg");
+    mask-image: url("../icon/palm_Ability.svg");
+
+}
+
+.ability-celestial::before {
+
+    -webkit-mask-image: url("../icon/galaxy_Ability.svg");
+    mask-image: url("../icon/galaxy_Ability.svg");
+
+}
 .Symbol {
     width: 62%;
     aspect-ratio: 1 / 1;
@@ -644,7 +718,107 @@ footer {
     letter-spacing: 0.08em;
 }
 
+@media (max-width: 980px) {
+    .side-nav {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+    }
 
+    .side-nav.open {
+        transform: translateX(0);
+    }
+
+    .page {
+        padding-left: 32px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .lineage-card,
+    .access-grid article {
+        width: calc(50% - 7px);
+    }
+}
+
+@media (max-width: 700px) {
+    .topbar {
+        height: 64px;
+        padding: 0 18px;
+    }
+
+    .side-nav {
+        top: 64px;
+        width: 230px;
+    }
+
+    .page {
+        padding: 64px 18px 60px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 64px 0 48px;
+        gap: 40px;
+    }
+
+    .hero-copy {
+        gap: 14px;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .lead {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .hero-seal {
+        align-self: center;
+        width: 180px;
+    }
+
+    .section {
+        padding-top: 68px;
+        gap: 22px;
+    }
+
+    .section-head {
+        gap: 10px;
+    }
+
+    .section-head h2 {
+        font-size: 31px;
+    }
+
+    .grid.two > *,
+    .ability-list article,
+    .lineage-card,
+    .access-grid article {
+        width: 100%;
+    }
+
+    .facility span {
+        width: 72px;
+    }
+
+    .facility p {
+        padding: 0 14px;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 6px;
+        line-height: 1.8;
+    }
+}
 
 /* observatory selector */
 
@@ -736,7 +910,25 @@ footer {
 
 }
 
+@media (max-width: 980px) {
 
+    .observatory-card {
+
+        width: calc(50% - 8px);
+
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .observatory-card {
+
+        width: 100%;
+
+    }
+
+}
 
 /* 계보 아이콘 */
 
@@ -922,6 +1114,91 @@ footer {
 }
 
 
+@media (max-width: 980px) {
+
+    .staff-row {
+
+        flex-direction: column;
+
+    }
+
+    .staff-summary,
+    .staff-detail {
+
+        width: 100%;
+
+    }
+
+    .staff-summary {
+
+        max-width: 420px;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .staff-summary {
+
+        width: 100%;
+        max-width: none;
+
+    }
+
+    .staff-detail {
+
+        width: 100%;
+
+    }
+
+    .staff-grid {
+
+        flex-direction: column;
+
+    }
+
+    .staff-grid .card,
+    .staff-grid .card.full,
+    .profile-chip {
+
+        width: 100%;
+
+    }
+
+    .profile-row {
+
+        flex-direction: column;
+
+    }
+
+    .ability-maker {
+
+        padding: 20px;
+
+    }
+
+    .ability-maker-field {
+
+        width: 100%;
+
+    }
+
+    .ability-maker-action {
+
+        align-items: stretch;
+        flex-direction: column;
+
+    }
+
+    .ability-maker-btn {
+
+        width: 100%;
+
+    }
+
+}
 
 .ability-maker-result {
 
@@ -1010,6 +1287,15 @@ footer {
 }
 
 
+@media (max-width: 700px) {
+
+    .ability-maker-result-wrap {
+
+        align-items: flex-start;
+
+    }
+
+}
 
 /* 능력 생성기 텍스트 영역 크기 고정 */
 
@@ -1120,7 +1406,32 @@ footer {
 
 /* 모바일 능력 생성기 텍스트 잘림 방지 */
 
+@media (max-width: 700px) {
 
+    .ability-maker-field {
+
+        min-height: 110px;
+        max-height: none;
+
+        overflow: visible;
+
+    }
+
+    .ability-maker-field span {
+
+        display: block;
+
+        width: 100%;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: keep-all;
+
+        line-height: 1.55;
+
+    }
+
+}
 
 /* 클립보드 복사용 숨김 영역 */
 
@@ -1147,232 +1458,7 @@ footer {
     border-radius: 50%;
 }
 
-
-@media (max-width: 980px) {
-
-    .staff-row {
-
-        flex-direction: column;
-
-    }
-
-    .staff-summary,
-    .staff-detail {
-
-        width: 100%;
-
-    }
-
-    .staff-summary {
-
-        max-width: 420px;
-
-    }
-
-
-
-    .observatory-card {
-
-        width: calc(50% - 8px);
-
-    }
-
-    .side-nav {
-        transform: translateX(-100%);
-        transition: transform 0.25s ease;
-    }
-
-    .side-nav.open {
-        transform: translateX(0);
-    }
-
-    .page {
-        padding-left: 32px;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .lineage-card,
-    .access-grid article {
-        width: calc(50% - 7px);
-    }
-}
-
 @media (max-width: 700px) {
-
-    .topbar {
-        height: 64px;
-        padding: 0 18px;
-    }
-
-    .side-nav {
-        top: 64px;
-        width: 230px;
-    }
-
-    .page {
-        padding: 64px 18px 60px;
-    }
-
-    .hero {
-        flex-direction: column;
-        align-items: flex-start;
-        min-height: auto;
-        padding: 64px 0 48px;
-        gap: 40px;
-    }
-
-    .hero-copy {
-        gap: 14px;
-    }
-
-    .hero h2 {
-        font-size: 38px;
-    }
-
-    .lead {
-        font-size: 14px;
-        line-height: 1.8;
-    }
-
-    .hero-seal {
-        align-self: center;
-        width: 180px;
-    }
-
-    .section {
-        padding-top: 68px;
-        gap: 22px;
-    }
-
-    .section-head {
-        gap: 10px;
-    }
-
-    .section-head h2 {
-        font-size: 31px;
-    }
-
-    .grid.two > *,
-    .ability-list article,
-    .lineage-card,
-    .access-grid article {
-        width: 100%;
-    }
-
-    .facility span {
-        width: 72px;
-    }
-
-    .facility p {
-        padding: 0 14px;
-        font-size: 13px;
-        line-height: 1.55;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 6px;
-        line-height: 1.8;
-    }
-
-    .observatory-card {
-
-        width: 100%;
-
-    }
-
-    .staff-summary {
-
-        width: 100%;
-        max-width: none;
-
-    }
-
-    .staff-detail {
-
-        width: 100%;
-
-    }
-
-    .staff-grid {
-
-        flex-direction: column;
-
-    }
-
-    .staff-grid .card,
-    .staff-grid .card.full,
-    .profile-chip {
-
-        width: 100%;
-
-    }
-
-    .profile-row {
-
-        flex-direction: column;
-
-    }
-
-    .ability-maker {
-
-        padding: 20px;
-
-    }
-
-    .ability-maker-field {
-
-        width: 100%;
-
-    }
-
-    .ability-maker-action {
-
-        align-items: stretch;
-        flex-direction: column;
-
-    }
-
-    .ability-maker-btn {
-
-        width: 100%;
-
-    }
-
-
-
-    .ability-maker-result-wrap {
-
-        align-items: flex-start;
-
-    }
-
-    .ability-maker-field {
-
-        min-height: 110px;
-        max-height: none;
-
-        overflow: visible;
-
-    }
-
-    .ability-maker-field span {
-
-        display: block;
-
-        width: 100%;
-
-        white-space: normal;
-        overflow-wrap: anywhere;
-        word-break: keep-all;
-
-        line-height: 1.55;
-
-    }
-
     .timeline article > span {
         width: 50px;
         min-width: 50px;
