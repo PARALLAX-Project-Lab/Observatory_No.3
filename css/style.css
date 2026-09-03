@@ -937,9 +937,6 @@ footer {
         width: calc(50% - 7px);
     }
 
-.observatory-card,
-.observatory-story-row .story-link { width: calc(50% - 8px); }
-
 }
 
 @media (max-width: 700px) {
