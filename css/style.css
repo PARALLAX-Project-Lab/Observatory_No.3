@@ -616,12 +616,10 @@ footer {
 
 .observatory-symbol{
 
-
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-
 
 }
 
@@ -987,6 +985,14 @@ footer {
 
 }
 
+/* 모바일 능력 생성기 텍스트 잘림 방지 */
+
+
+/* 클립보드 복사용 숨김 영역 */
+
+.clipboard-copy-are
+/* 게이트 타임라인 원형 번호 */
+
 .timeline article > span {
     width: 50px;
     min-width: 50px;
@@ -999,7 +1005,22 @@ footer {
 }
 
 
+
+
+.observatory-story-row {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.observatory-story-row .story-link {
+    width: calc(33.333% - 11px);
+    flex: 0 0 auto;
+}
+
 @media (max-width: 980px) {
+
+
     .side-nav {
         transform: translateX(-100%);
         transition: transform 0.25s ease;
@@ -1021,14 +1042,6 @@ footer {
     .access-grid article {
         width: calc(50% - 7px);
     }
-
-
-    .observatory-card {
-
-        width: calc(50% - 8px);
-
-    }
-
 
     .staff-row {
 
@@ -1053,6 +1066,10 @@ footer {
 
 
 @media (max-width: 700px) {
+    .observatory-story-row .story-link {
+        width: 100%;
+    }
+
     .topbar {
         height: 64px;
         padding: 0 18px;
@@ -1127,7 +1144,10 @@ footer {
         gap: 6px;
         line-height: 1.8;
     }
+}
 
+
+@media (max-width: 700px) {
 
     .observatory-card {
 
@@ -1135,6 +1155,10 @@ footer {
 
     }
 
+}
+
+
+@media (max-width: 700px) {
 
     .staff-summary {
 
@@ -1233,6 +1257,10 @@ footer {
 
     }
 
+}
+
+
+@media (max-width: 700px) {
     .timeline article > span {
         width: 50px;
         min-width: 50px;

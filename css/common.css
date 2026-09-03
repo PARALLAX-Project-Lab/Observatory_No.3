@@ -277,3 +277,30 @@ button {
     mask-image: url("../icon/galaxy_Ability.svg");
 
 }
+
+/* 스토리 바로가기 */
+
+.story-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 18px;
+    border: 1px solid var(--gold-dark);
+    border-radius: 8px;
+    background-color: #24221E;
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.story-link:hover {
+    border-color: var(--gold);
+    background-color: #2B2924;
+    color: var(--text);
+}
