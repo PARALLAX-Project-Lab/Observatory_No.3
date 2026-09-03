@@ -819,3 +819,46 @@ textarea {
 
 }
 
+
+/* 모바일 능력 생성기 텍스트 잘림 방지 */
+
+@media (max-width: 700px) {
+
+    .ability-maker-field {
+
+        min-height: 110px;
+        max-height: none;
+
+        overflow: visible;
+
+    }
+
+    .ability-maker-field span {
+
+        display: block;
+
+        width: 100%;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: keep-all;
+
+        line-height: 1.55;
+
+    }
+
+}
+
+
+/* 클립보드 복사용 숨김 영역 */
+
+.clipboard-copy-area {
+
+    position: fixed;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
