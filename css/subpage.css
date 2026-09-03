@@ -666,7 +666,6 @@ section[data-nav="gilo"] .person-placeholder::before {
 
 .sub-hero {
 
-        flex-direction: column;
         align-items: flex-start;
 
     }
@@ -702,6 +701,12 @@ section[data-nav="gilo"] .person-placeholder::before {
 
 @media (max-width: 700px) {
 
+    .sub-hero {
+
+        flex-direction: column;
+
+    }
+
 .sub-hero {
 
         gap: 36px;
@@ -714,11 +719,6 @@ section[data-nav="gilo"] .person-placeholder::before {
 
     }
 
-.hero-symbol {
-
-        width: 190px;
-
-    }
 
 .section-head h2 {
 
