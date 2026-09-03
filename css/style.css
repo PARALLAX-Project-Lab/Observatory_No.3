@@ -202,7 +202,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 260px;
+    width: 100%;
+    max-width: 300px;
     aspect-ratio: 1 / 1;
     flex: 0 0 auto;
 }
@@ -1157,7 +1158,7 @@ footer {
     }
 
     .hero {
-        flex-direction: column;
+       
         align-items: flex-start;
         min-height: auto;
         padding: 64px 0 48px;
@@ -1294,8 +1295,6 @@ footer {
 
 /* 모바일 능력 생성기 텍스트 잘림 방지 */
 
-
-
     .ability-maker-field {
 
         min-height: 110px;
@@ -1326,4 +1325,18 @@ footer {
         min-height: 50px;
         flex-basis: 50px;
     }
+}
+
+
+@media (max-width: 520px) {
+
+
+    .hero h2,    .section-head h2 {
+
+        font-size: 28px;
+
+    }
+
+
+
 }
