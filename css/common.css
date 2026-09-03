@@ -42,7 +42,7 @@
 
 .Symbol {
 
-    width: 62%;
+    width: 86%;
     aspect-ratio: 1 / 1;
 
     flex: 0 0 auto;
@@ -157,7 +157,7 @@
 
 .ability-fate::before {
 
-    width: 25px;
+    width: 20px;
 
     -webkit-mask-image: url("../icon/fountain-pen_Ability.svg");
     mask-image: url("../icon/fountain-pen_Ability.svg");
@@ -175,7 +175,7 @@
 
 .ability-time::before {
 
-    width: 24px;
+    width: 21px;
 
     -webkit-mask-image: url("../icon/sandclock_Ability.svg");
     mask-image: url("../icon/sandclock_Ability.svg");
@@ -184,7 +184,7 @@
 
 .ability-life::before {
 
-    width: 25px;
+    width: 21px;
 
     -webkit-mask-image: url("../icon/palm_Ability.svg");
     mask-image: url("../icon/palm_Ability.svg");
