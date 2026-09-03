@@ -1,61 +1,5 @@
 @charset "utf-8";
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-
-*,
-*::before,
-*::after,
-button,
-input,
-select,
-textarea {
-    font-family: "Pretendard", sans-serif;
-}
-
-
-:root {
-    --bg: #1E1E1E;
-    --bg-sub: #242424;
-    --card: #262626;
-    --card-sub: #303030;
-    --line: #3E3A32;
-    --line-soft: #443D30;
-    --gold: #B89A5E;
-    --gold-light: #D2BC84;
-    --gold-dark: #7C6742;
-    --text: #F2F2F2;
-    --text-sub: #C8C8C8;
-    --muted: #9B9B9B;
-    --muted-dark: #6F6F6F;
-    --max: 1180px;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Noto Sans KR", sans-serif;
-    color: var(--text);
-    background-color: var(--bg);
-    letter-spacing: -0.02em;
-}
-
-img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-a {
-    color: inherit;
-}
-
-button {
-    font: inherit;
-}
-
 .topbar {
     position: fixed;
     z-index: 30;
@@ -95,18 +39,7 @@ button {
     letter-spacing: 0.18em;
 }
 
-.eyebrow {
-    color: var(--gold-light);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-}
-
-.brand .eyebrow {
-    color: var(--muted);
-    font-size: 8px;
-}
-
+.brand 
 .menu-btn {
     display: none;
     width: 38px;
@@ -139,13 +72,7 @@ button {
     padding-bottom: 16px;
 }
 
-.side-nav a {
-    padding: 11px 8px;
-    border-left: 1px solid #1D1D1D;
-    color: var(--muted);
-    font-size: 14px;
-}
-
+.side-nav 
 .side-nav a:hover,
 .side-nav a.active {
     border-left-color: var(--gold);
@@ -281,8 +208,6 @@ footer {
 }
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
     gap: 18px;
 }
 
@@ -330,12 +255,6 @@ footer {
     font-size: 14px;
     line-height: 1.75;
 }
-
-.small {
-    color: var(--muted) !important;
-    font-size: 12px !important;
-}
-
 
 /* 계보 설명 */
 
@@ -1289,16 +1208,7 @@ footer {
 
 /* 클립보드 복사용 숨김 영역 */
 
-.clipboard-copy-area {
-
-    position: fixed;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-}
-
+.clipboard-copy-are
 /* 게이트 타임라인 원형 번호 */
 
 .timeline article > span {

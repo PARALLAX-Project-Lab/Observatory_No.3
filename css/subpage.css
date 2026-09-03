@@ -1,64 +1,6 @@
 @charset "utf-8";
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-
-*,
-*::before,
-*::after,
-button,
-input,
-select,
-textarea {
-    font-family: "Pretendard", sans-serif;
-}
-
-
-:root {
-
-    --bg: #1E1E1E;
-    --bg-sub: #242424;
-
-    --card: #262626;
-    --card-sub: #303030;
-
-    --line: #3E3A32;
-
-    --gold: #B89A5E;
-    --gold-light: #D2BC84;
-    --gold-dark: #7C6742;
-
-    --text: #F2F2F2;
-    --text-sub: #C8C8C8;
-    --muted: #9B9B9B;
-
-    --max: 1180px;
-
-}
-
-html {
-
-    scroll-behavior: smooth;
-
-}
-
-body {
-
-    color: var(--text);
-    background-color: var(--bg);
-
-    font-family: "Noto Sans KR", sans-serif;
-
-    letter-spacing: -0.02em;
-
-}
-
-a {
-
-    color: inherit;
-
-    text-decoration: none;
-
-}
+@import url("common.css");
 
 .sub-top {
 
@@ -147,20 +89,7 @@ a {
 
 }
 
-.sub-nav a {
-
-    flex: 0 0 auto;
-
-    padding: 13px 12px;
-
-    color: var(--muted);
-
-    font-size: 12px;
-
-    border-bottom: 1px solid transparent;
-
-}
-
+.sub-nav 
 .sub-nav a:hover,
 .sub-nav a.active {
 
@@ -213,17 +142,6 @@ a {
     width: 60%;
 
     gap: 18px;
-
-}
-
-.eyebrow {
-
-    color: var(--gold-light);
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 0.16em;
 
 }
 
@@ -326,14 +244,7 @@ a {
 }
 
 .grid {
-
-    display: flex;
-    flex-wrap: wrap;
-
-    width: 100%;
-
     gap: 16px;
-
 }
 
 .card {
@@ -715,7 +626,124 @@ a {
 }
 
 
+/* tablet */
 
+@media (max-width: 980px) {
+
+    .sub-hero {
+
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .hero-copy {
+
+        width: 100%;
+
+    }
+
+    .hero-symbol {
+
+        align-self: center;
+
+    }
+
+    .person-card {
+
+        width: calc(50% - 8px);
+
+    }
+
+    .profile-chip {
+
+        width: calc(50% - 6px);
+
+    }
+
+}
+
+
+/* mobile */
+
+@media (max-width: 700px) {
+
+    .sub-top {
+
+        padding: 15px 18px;
+
+    }
+
+    .sub-nav {
+
+        top: 63px;
+
+        padding: 0 18px;
+
+    }
+
+    .sub-wrap {
+
+        padding: 44px 18px 64px;
+
+        gap: 56px;
+
+    }
+
+    .sub-hero {
+
+        gap: 36px;
+
+    }
+
+    .sub-hero h1 {
+
+        font-size: 38px;
+
+    }
+
+    .hero-symbol {
+
+        width: 190px;
+
+    }
+
+    .card,
+    .card.third,
+    .person-card,
+    .profile-chip {
+
+        width: 100%;
+
+    }
+
+    .section-head h2 {
+
+        font-size: 28px;
+
+    }
+
+    .floor-list strong {
+
+        width: 72px;
+
+    }
+
+    .floor-list p {
+
+        padding: 0 14px;
+
+        font-size: 13px;
+
+    }
+
+    .sub-footer {
+
+        flex-direction: column;
+
+    }
+
+}
 
 /* layout fix */
 
@@ -881,6 +909,69 @@ a {
 
 }
 
+@media (max-width: 980px) {
+
+    .staff-row {
+
+        flex-direction: column;
+
+    }
+
+    .staff-summary,
+    .staff-detail {
+
+        width: 100%;
+
+    }
+
+    .staff-summary {
+
+        max-width: 420px;
+
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .sub-top {
+
+        height: 64px;
+
+    }
+
+    .sub-top-in {
+
+        padding: 0 18px;
+
+    }
+
+    .sub-nav {
+
+        top: 64px;
+
+    }
+
+    .sub-nav-in {
+
+        padding: 0 18px;
+
+    }
+
+    .staff-summary {
+
+        max-width: none;
+
+    }
+
+    .staff-grid .card {
+
+        width: 100%;
+
+    }
+
+}
+
 /* 개발자 검사창 확인용 숨김 텍스트 */
 
 .inspect-hide {
@@ -1012,14 +1103,7 @@ a {
 
 }
 
-.sub-nav-in a {
-
-    flex: 0 0 auto;
-
-    user-select: none;
-
-}
-
+.sub-nav-in 
 /* 제3관측동 투명 프로필 이미지 */
 
 .person-visual.profile-white {
@@ -1073,181 +1157,3 @@ a {
     letter-spacing: 0.05em;
 
 }
-
-
-@media (max-width: 980px) {
-
-    .staff-row {
-
-        flex-direction: column;
-
-    }
-
-    .staff-summary,
-    .staff-detail {
-
-        width: 100%;
-
-    }
-
-    .staff-summary {
-
-        max-width: 420px;
-
-    }
-
-
-/* tablet */
-
-
-    .sub-hero {
-
-        flex-direction: column;
-        align-items: flex-start;
-
-    }
-
-    .hero-copy {
-
-        width: 100%;
-
-    }
-
-    .hero-symbol {
-
-        align-self: center;
-
-    }
-
-    .person-card {
-
-        width: calc(50% - 8px);
-
-    }
-
-    .profile-chip {
-
-        width: calc(50% - 6px);
-
-    }
-
-}
-
-
-/* mobile */
-
-@media (max-width: 700px) {
-
-    .sub-top {
-
-        padding: 15px 18px;
-
-    }
-
-    .sub-nav {
-
-        top: 63px;
-
-        padding: 0 18px;
-
-    }
-
-    .sub-wrap {
-
-        padding: 44px 18px 64px;
-
-        gap: 56px;
-
-    }
-
-    .sub-hero {
-
-        gap: 36px;
-
-    }
-
-    .sub-hero h1 {
-
-        font-size: 38px;
-
-    }
-
-    .hero-symbol {
-
-        width: 190px;
-
-    }
-
-    .card,
-    .card.third,
-    .person-card,
-    .profile-chip {
-
-        width: 100%;
-
-    }
-
-    .section-head h2 {
-
-        font-size: 28px;
-
-    }
-
-    .floor-list strong {
-
-        width: 72px;
-
-    }
-
-    .floor-list p {
-
-        padding: 0 14px;
-
-        font-size: 13px;
-
-    }
-
-    .sub-footer {
-
-        flex-direction: column;
-
-    }
-
-    .sub-top {
-
-        height: 64px;
-
-    }
-
-    .sub-top-in {
-
-        padding: 0 18px;
-
-    }
-
-    .sub-nav {
-
-        top: 64px;
-
-    }
-
-    .sub-nav-in {
-
-        padding: 0 18px;
-
-    }
-
-    .staff-summary {
-
-        max-width: none;
-
-    }
-
-    .staff-grid .card {
-
-        width: 100%;
-
-    }
-
-}
-
